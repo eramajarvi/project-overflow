@@ -1,0 +1,51 @@
+---
+import "98.css";
+import LoginLayout from "../layouts/LoginLayout.astro";
+---
+
+<div class="window" style="width: 700px">
+  <div class="title-bar">
+    <div class="title-bar-text">Ingrese datos de inicio de sesión</div>
+    <div class="title-bar-controls">
+      <button aria-label="Help"></button>
+      <button aria-label="Close"></button>
+    </div>
+  </div>
+  <div class="window-body">
+    <p>There's so much room for activities!</p>
+  </div>
+</div>
+
+<style>
+  .title-bar {
+    font-family: "TahomaBold", Arial;
+    font-size: 12px;
+    -webkit-font-smoothing: none;
+  }
+
+  .window {
+    font-family: "Tahoma", Arial;
+    font-size: 12px;
+    -webkit-font-smoothing: none;
+  }
+
+  .title-bar-controls button {
+    padding: 0;
+    display: block;
+    min-width: 18px;
+    min-height: 16px;
+  }
+
+  .title-bar-controls button[aria-label="Help"] {
+    background-image: svg-load("./icon/help.svg");
+    background-repeat: no-repeat;
+    background-position: top 3px left 5px;
+  }
+
+  .title-bar-controls button[aria-label="Close"] {
+    margin-left: 2px;
+    background-image: svg-load("./icon/close.svg");
+    background-repeat: no-repeat;
+    background-position: top 4px left 4.5px;
+  }
+</style>
