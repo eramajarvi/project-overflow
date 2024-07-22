@@ -1,17 +1,47 @@
 ---
 import LoginModal from "../components/LoginModal.astro";
+interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
 ---
 
 <!doctype html>
 <html lang="es">
-  <body>
-    <LoginModal class="justify-center items-center" />
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Astro description" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+  </head>
+
+  <body class="size-full absolute justify-center flex bgGradient">
+    <slot />
   </body>
 </html>
 
 <style>
-  html {
+  body {
     background: #0f8787;
-    background-size: 224px;
+  }
+
+  .bgGradient:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-blend-mode: multiply;
+    background: radial-gradient(
+      3px 3px,
+      transparent,
+      rgba(255, 255, 255, 0.25)
+    );
+    background-size: 3px 3px;
+    pointer-events: none;
   }
 </style>
