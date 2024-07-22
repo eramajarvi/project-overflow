@@ -1,18 +1,50 @@
 ---
 import "98.css";
-import LoginLayout from "../layouts/LoginLayout.astro";
+import { Image } from "astro:assets";
+import passwordIcon from "../assets/password.png";
 ---
 
-<div class="window" style="width: 700px">
+<div class="window" style="width: 500px">
   <div class="title-bar">
-    <div class="title-bar-text">Ingrese datos de inicio de sesión</div>
+    <div class="title-bar-text">
+      Bienvenido a ｓｅｇｍｅｎｔａｔｉｏｎｆａｕｌｔ
+    </div>
     <div class="title-bar-controls">
       <button aria-label="Help"></button>
       <button aria-label="Close"></button>
     </div>
   </div>
-  <div class="window-body">
-    <p>There's so much room for activities!</p>
+  <div class="window-body flex justify-around">
+    <div class="place-content-start mt-1">
+      <img
+        class="h-8 w-8"
+        src={passwordIcon.src}
+        alt="Password icon to log in into Windows"
+      />
+    </div>
+    <div>
+      <p>Ingrese sus credenciales para iniciar sesión</p>
+      <div class="mt-3">
+        <div class="field-row justify-between" style="width: 200px">
+          <label for="text18">Usuario:</label>
+          <input
+            class="self-end"
+            id="text18"
+            type="text"
+            disabled
+            value="Admin"
+          />
+        </div>
+        <div class="field-row justify-end" style="width: 200px">
+          <label for="text19">Contraseña:</label>
+          <input class="self-end" id="text19" type="text" />
+        </div>
+      </div>
+    </div>
+    <div class="flex flex-col">
+      <button class="mt-1">OK</button>
+      <button class="mt-1" disabled>Cancelar</button>
+    </div>
   </div>
 </div>
 
@@ -23,7 +55,11 @@ import LoginLayout from "../layouts/LoginLayout.astro";
     -webkit-font-smoothing: none;
   }
 
-  .window {
+  .window,
+  p,
+  label,
+  input,
+  button {
     font-family: "Tahoma", Arial;
     font-size: 12px;
     -webkit-font-smoothing: none;
