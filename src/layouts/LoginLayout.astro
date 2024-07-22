@@ -1,5 +1,4 @@
 ---
-import LoginModal from "../components/LoginModal.astro";
 interface Props {
   title: string;
 }
@@ -28,6 +27,7 @@ const { title } = Astro.props;
     background: #0f8787;
   }
 
+  /* Gradient background - based on https://codepen.io/coreh/pen/LQJBLa?editors=1100 */
   .bgGradient:before {
     content: "";
     position: absolute;

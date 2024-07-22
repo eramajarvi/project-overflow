@@ -1,11 +1,11 @@
 ---
-import LoginModal from "../components/LoginModal.astro";
+import LoginModal from "../components/LoginModal.jsx";
 import Layout from "../layouts/Layout.astro";
 import LoginLayout from "../layouts/LoginLayout.astro";
 ---
 
 <LoginLayout title="【ｓｅｇｍｅｎｔａｔｉｏｎｆａｕｌｔ】">
   <main>
-    <LoginModal class="" />
+    <LoginModal client:load />
   </main>
 </LoginLayout>

@@ -1,0 +1,71 @@
+@font-face {
+  font-family: "Tahoma";
+  src: url("/fonts/tahoma/subset-Tahoma.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "TahomaBold";
+  src: url("/fonts/tahoma/subset-Tahoma-Bold.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+code {
+  font-family:
+    Menlo,
+    Monaco,
+    Lucida Console,
+    Liberation Mono,
+    DejaVu Sans Mono,
+    Bitstream Vera Sans Mono,
+    Courier New,
+    monospace;
+}
+
+.pixelated {
+    image-rendering: pixelated;
+  }
+  .title-bar {
+    font-family: "TahomaBold", Arial;
+    font-size: 12px;
+    -webkit-font-smoothing: none;
+  }
+
+  .keyBind:first-letter{
+    text-decoration:underline;
+  }
+
+  .window,
+  p,
+  label,
+  input,
+  button,
+  .LoginModalOKButton {
+    font-family: "Tahoma", Arial;
+    font-size: 12px;
+    -webkit-font-smoothing: none;
+  }
+
+  .title-bar-controls button {
+    padding: 0;
+    display: block;
+    min-width: 18px;
+    min-height: 16px;
+  }
+
+  .title-bar-controls button[aria-label="Help"] {
+    background-image: svg-load("./icon/help.svg");
+    background-repeat: no-repeat;
+    background-position: top 3px left 5px;
+  }
+
+  .title-bar-controls button[aria-label="Close"] {
+    margin-left: 2px;
+    background-image: svg-load("./icon/close.svg");
+    background-repeat: no-repeat;
+    background-position: top 4px left 4.5px;
+  }
