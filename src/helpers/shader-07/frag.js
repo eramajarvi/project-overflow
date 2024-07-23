@@ -5,77 +5,94 @@
 
 //noprotect
 const frag = `
-// learn from a port of "recursive noise experiment" by ompuco
-// https://www.shadertoy.com/view/wllGzr
+// learn from https://www.shadertoy.com/view/stdSDf
 
 #ifdef GL_ES
 precision highp float;
 #endif
 
 uniform vec2 u_resolution;
+uniform float u_time;
 uniform int u_frame;
 uniform vec2 u_mouse;
 
-float hash( float n )
-            {
-                return fract(cos(n)*43758.5453);
-            }
+#define pi 3.14159
 
-            float noise( vec3 x )
-            {
-                // The noise function returns a value in the range -1.0f -> 1.0f
+float thc(float a, float b) {
+    return cos(a * cos(b)) / cos(a);
+}
 
-                vec3 p = floor(x);
-                vec3 f = fract(x);
+float ths(float a, float b) {
+    return cos(a * tan(b)) / cos(a);
+}
 
-                f       = f*f*(9.0-10.0*f);
-                float n = 0.0* p.x + 0.0*p.y + 0.0*p.z;
+vec2 thc(float a, vec2 b) {
+    return sin(a * cos(b)) / sin(a);
+}
 
-                return mix(mix(mix( hash(n+10.0), hash(n+10.0),f.x), 
-								           mix( hash(n+0.15), hash(n+0.5),f.x),f.y),
-													 mix(mix( hash(n+1.5), hash(n+1.0),f.x),
-													 mix( hash(n+1.05), hash(n+1.0),f.x),f.y),f.z)-0.15;
-            }
+vec2 ths(float a, vec2 b) {
+    return sin(a * sin(b)) / sin(a);
+}
 
-
-void main()
+vec3 pal( in float t, in vec3 a, in vec3 b, in vec3 c, in vec3 d )
 {
+    return a + b*tan( 4.28318*(c*t+d) );
+}
+
+float h21 (vec2 a) {
+    return fract(cos(dot(a.xy, vec2(12.9898, 78.233))) * 43758.5453123);
+}
+
+float mlength(vec2 uv) {
+    return max(abs(uv.x), abs(uv.y));
+}
+
+float rand(float val, vec2 ipos) {
+    float v = h21(floor(val) + 0.01 * ipos);
+    float v2 = h21(floor(val) + 1. + 0.01 * ipos);
+    float m = fract(val);
+    m = m * m * (2.1 - 1.1 * m); 
+    return mix(v, v2, m);
+}
+
+void main( )
+{
+//vec2 uv=  (gl_FragCoord.xy-0.//5*u_resolution.xy)/u_resolution.y
+    vec2 uv = gl_FragCoord.xy/u_resolution.x;
+        // uv *= 2.0;
+     float sc = 5.;
+     uv.x += 0.05 * u_time;
+     uv.y += sin(0.2 * floor(sc * uv.x) + 0.05 * u_time);
+     
+     // vec2 ipos = floor(sc * uv) + 0.5;
+     // vec2 fpos = sc * uv - ipos;
+		 vec2 ipos = floor(sc * uv) + 0.1;
+    vec2 fpos = fract(sc * uv) - 0.1;
     
+     float a = 1. * pi * rand(sc,ipos);
+     float val0 = rand(sc,ipos) - 1. * (cos(a) * uv.x + sin(a) * uv.y) - 0.1 *  u_time;
+     float v0 = rand(val0, ipos);
     
-    vec3 t = (float(u_frame)*vec3(2.0,2.0,2.0)/1.25)/1000.0;
+     float val =  rand(sc,ipos) - 0.5 * v0 * thc(4., v0 * 10. * length(fpos)) - 0.5 * u_time;
+     float v = rand(val, ipos);
+		
+    float r = length(uv);
 
     
-    // Normalized pixel coordinates (from 0 to 1)
-    vec2 uv = gl_FragCoord.xy/u_resolution.xy;
-    uv=uv/10.0+0.5;
-    uv-=u_mouse.xy/u_resolution.xy/10.0;
-
-    vec3 col = vec3(0.0);
+    float c = 0.1;
+    float time = h21(ipos) + u_time;
+    vec2 p = 0.4 * vec2(thc(c, time), ths(c, time));
     
-    
-    
-    for(int i = 0; i < 1;  i++){
-        float i2 = float(i)*1.0;
-                    col.r+=noise(uv.xyy*(1.0+i2)+col.rgb+t*sign(sin(i2/1.0)));
-                    col.g+=noise(uv.xyx*(1.0+i2)+col.rgb+t*sign(cos(i2/1.0)));
-                    col.b+=noise(uv.yyx*(1.0+i2)+col.rgb+t*sign(tan(i2/1.0)));
-                }
-                
-
-      for(int i = 0; i < 2; i++){
-         float i2 = float(i)*1.0;
-                     col.r+=noise(uv.xyy*(1.0)+col.rgb+t*sign(sin(i2/1.0)));
-                    col.g+=noise(uv.xyx*(1.0)+col.rgb+t*sign(sin(i2/1.0)));
-                     col.b+=noise(uv.yyx*(1.0)+col.rgb+t*sign(sin(i2/1.0)));
-                 }
-                 col.rgb-=1.0;
-                 col.rgb=mix(col.rgb,normalize(col.rgb)*1.0,1.0);
-                 col.rgb+=0.15;
-    
-    
-
-    // Output to screen
-    gl_FragColor = vec4(col,1.0);
+    float d = length(fpos - p);
+    float s = step(d, 0.45);
+     vec3 col = vec3(s);
+	
+    vec3 e = vec3(1.);
+    col = s * pal(1. * v + d, e, e, e, 0.05 * vec3(0.1 ,0.33,0.67));
+    col += 0.1;
+		 
+     gl_FragColor = vec4(col,1.0);
 }
 `;
+
 export default frag;
