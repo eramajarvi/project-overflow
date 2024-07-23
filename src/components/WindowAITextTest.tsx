@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from 'react';
 import "98.css";
 import "../styles/global.css";
 import { useCompletion } from "ai/react";
@@ -9,8 +9,8 @@ export default function WindowAITextTest() {
   });
 
   return (
-    <div className="">
-      <div className="window mt-32 absolute" style={{ width: "500px" }}>
+    <div>
+      <div className="window mt-32 absolute" style={{ width: "500px", top: Math.floor(Math.random()*700), left: Math.floor(Math.random()*500)}}>
         <div className="title-bar">
           <div className="title-bar-text">
             Inteligencia Articial está escribiendo...
