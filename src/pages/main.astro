@@ -4,6 +4,9 @@ import Shader from "../components/Shader.jsx";
 import WindowAITextTest from "../components/WindowAITextTest.tsx";
 
 import "../styles/global.css";
+
+const positionTop = Math.floor(Math.random() * 700);
+const positionLeft = Math.floor(Math.random() * 700);
 ---
 
 <Layout title="【ｓｅｇｍｅｎｔａｔｉｏｎｆａｕｌｔ】">
@@ -11,8 +14,8 @@ import "../styles/global.css";
     <div class="absolute">
       <Shader client:only="react" />
     </div>
-    <div class="absolute" id="draggableWindow">
-      <WindowAITextTest client:only="react" />
+    <div class=`absolute top-[500px] left-[100px]` id="draggableWindow">
+      <WindowAITextTest client:load />
     </div>
   </main>
 </Layout>
