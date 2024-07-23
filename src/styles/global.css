@@ -91,6 +91,11 @@ button,
   -webkit-font-smoothing: none;
 }
 
+.title-bar {
+  cursor: default;
+  font-family: "Tahoma", Arial;
+}
+
 .title-bar-controls button {
   padding: 0;
   display: block;
