@@ -1,3 +1,15 @@
+:root {
+  --accent: 136, 58, 234;
+  --accent-light: 224, 204, 250;
+  --accent-dark: 49, 10, 101;
+  --accent-gradient: linear-gradient(
+    45deg,
+    rgb(var(--accent)),
+    rgb(var(--accent-light)) 30%,
+    white 60%
+  );
+}
+
 @font-face {
   font-family: "Tahoma";
   src: url("/fonts/tahoma/subset-Tahoma.woff2") format("woff2");
@@ -12,6 +24,12 @@
   font-weight: normal;
   font-style: normal;
   font-display: swap;
+}
+
+html {
+  font-family: "Tahoma", system-ui, sans-serif;
+  background: #0f8787;
+  background-size: 224px;
 }
 
 code {
