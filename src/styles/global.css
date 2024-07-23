@@ -26,46 +26,69 @@ code {
     monospace;
 }
 
+body {
+  background: #0f8787;
+}
+
+/* Gradient background - based on https://codepen.io/coreh/pen/LQJBLa?editors=1100 */
+.bgGradient:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-blend-mode: multiply;
+  background: radial-gradient(
+    circle at center,
+    transparent,
+    rgba(255, 255, 255, 0.2)
+  );
+
+  background-size: 3px 3px;
+  pointer-events: none;
+}
+
 .pixelated {
-    image-rendering: pixelated;
-  }
-  .title-bar {
-    font-family: "TahomaBold", Arial;
-    font-size: 12px;
-    -webkit-font-smoothing: none;
-  }
+  image-rendering: pixelated;
+}
+.title-bar {
+  font-family: "TahomaBold", Arial;
+  font-size: 12px;
+  -webkit-font-smoothing: none;
+}
 
-  .keyBind:first-letter{
-    text-decoration:underline;
-  }
+.keyBind:first-letter {
+  text-decoration: underline;
+}
 
-  .window,
-  p,
-  label,
-  input,
-  button,
-  .LoginModalOKButton {
-    font-family: "Tahoma", Arial;
-    font-size: 12px;
-    -webkit-font-smoothing: none;
-  }
+.window,
+p,
+label,
+input,
+button,
+.LoginModalOKButton {
+  font-family: "Tahoma", Arial;
+  font-size: 12px;
+  -webkit-font-smoothing: none;
+}
 
-  .title-bar-controls button {
-    padding: 0;
-    display: block;
-    min-width: 18px;
-    min-height: 16px;
-  }
+.title-bar-controls button {
+  padding: 0;
+  display: block;
+  min-width: 18px;
+  min-height: 16px;
+}
 
-  .title-bar-controls button[aria-label="Help"] {
-    background-image: svg-load("./icon/help.svg");
-    background-repeat: no-repeat;
-    background-position: top 3px left 5px;
-  }
+.title-bar-controls button[aria-label="Help"] {
+  background-image: svg-load("./icon/help.svg");
+  background-repeat: no-repeat;
+  background-position: top 3px left 5px;
+}
 
-  .title-bar-controls button[aria-label="Close"] {
-    margin-left: 2px;
-    background-image: svg-load("./icon/close.svg");
-    background-repeat: no-repeat;
-    background-position: top 4px left 4.5px;
-  }
+.title-bar-controls button[aria-label="Close"] {
+  margin-left: 2px;
+  background-image: svg-load("./icon/close.svg");
+  background-repeat: no-repeat;
+  background-position: top 4px left 4.5px;
+}

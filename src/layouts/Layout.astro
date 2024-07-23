@@ -39,22 +39,4 @@ const { title } = Astro.props;
     background: #1a1a1a;
     background-size: 224px;
   }
-
-  .bgGradient {
-    background: linear-gradient(160deg, #c9d0ff 0%, #fff 80%);
-    position: relative;
-    overflow: hidden;
-  }
-
-  .bgGradient:before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-blend-mode: multiply;
-    background: radial-gradient(3px 3px, transparent, white);
-    background-size: 3px 3px;
-  }
 </style>
