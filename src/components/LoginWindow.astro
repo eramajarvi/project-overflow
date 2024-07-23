@@ -1,0 +1,83 @@
+---
+import "98.css";
+import "../styles/global.css";
+import passwordIcon from "../assets/password.png";
+---
+
+<div class="window mt-32" style={{ width: "500px" }}>
+  <div class="title-bar">
+    <div class="title-bar-text">
+      Bienvenido a ｓｅｇｍｅｎｔａｔｉｏｎｆａｕｌｔ
+    </div>
+    <div class="title-bar-controls">
+      <button aria-label="Help"></button>
+      <button aria-label="Close"></button>
+    </div>
+  </div>
+  <div class="window-body flex justify-around">
+    <div class="place-content-start mt-1">
+      <img
+        class="pixelated h-12 w-12"
+        src={passwordIcon.src}
+        alt="Password icon to log in into Windows"
+      />
+    </div>
+    <div>
+      <p>Ingrese sus credenciales para iniciar sesión</p>
+      <div class="mt-3">
+        <div class="field-row justify-between" style={{ width: "200px" }}>
+          <label for="text18">
+            <p class="keyBind">Usuario:</p>
+          </label>
+
+          <input
+            class="self-end"
+            id="text18"
+            type="text"
+            disabled
+            value="Admin"
+          />
+        </div>
+
+        <div class="field-row justify-end" style={{ width: "200px" }}>
+          <label for="text19">
+            <p class="keyBind">Contraseña:</p>
+          </label>
+          <input
+            class="self-end"
+            id="text19"
+            type="password"
+            placeholder="*********************"
+          />
+        </div>
+
+        <div>
+          <p class="explainerOnLogin italic text-[10px] mt-2.5">
+            La contraseña es tu API Key de Google.
+          </p>
+
+          <p class="explainerOnLogin italic text-[10px] -mt-1">
+            Pero ya la tengo en mi sistema
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="flex flex-col">
+      <button class="mt-1 keyBind loginButton"> OK </button>
+      <button class="mt-1 keyBind" disabled> Cancelar </button>
+    </div>
+  </div>
+</div>
+
+<script>
+  // Find all buttons with the `alert` class on the page.
+  const buttons = document.querySelectorAll("button.loginButton");
+
+  // Handle clicks on each button.
+  buttons.forEach((button) => {
+    button.addEventListener("click", () => {
+      location.replace("/main");
+    });
+  });
+</script>

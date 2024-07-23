@@ -10,16 +10,21 @@
     "astro": "astro"
   },
   "dependencies": {
+    "@ai-sdk/google": "^0.0.27",
     "@astrojs/react": "^3.6.0",
     "@astrojs/tailwind": "^5.1.0",
+    "@astrojs/vercel": "^7.7.2",
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
     "98.css": "^0.1.20",
+    "ai": "^3.2.33",
     "astro": "^4.12.2",
     "inquirer": "^10.1.0",
     "p5": "^1.9.4",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
+    "react-draggable": "^4.4.6",
+    "react-router-dom": "^6.25.1",
     "tailwindcss": "^3.4.6"
   },
   "devDependencies": {
