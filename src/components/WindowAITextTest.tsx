@@ -10,10 +10,10 @@ export default function WindowAITextTest() {
 
   return (
     <div>
-      <div className="window mt-32 absolute" style={{ width: "500px", top: Math.floor(Math.random()*700), left: Math.floor(Math.random()*500)}}>
+      <div className="window mt-32 absolute" style={{ width: "500px"}}>
         <div className="title-bar">
           <div className="title-bar-text">
-            Inteligencia Articial está escribiendo...
+            Ahora t̶e̶n̷g̴o̴ t̵̠̀o̴͚̚d̷̖̓ó̸̫ş̶̒ ț̸͇̆̌̀ủ̸͈̟̼͠s̸̯͆ͅ ̸͍̻̯̊̋͗r̴͐ͅe̴͈͂ć̸̹͗̈u̴͈͖͂̊̀ṟ̷͍̜͒s̸̜̐͜ͅo̷̹̘̓̅ś̴̢̟͖
           </div>
 
           <div className="title-bar-controls">
@@ -26,7 +26,7 @@ export default function WindowAITextTest() {
             <p>Aquí va lo que dice la IA</p>
             <button
               onClick={async () => {
-                await complete("Why is the sky blue?");
+                await complete("Crea un cuento corto sobre la situación actual de la humanidad");
               }}
             >
               Responder
