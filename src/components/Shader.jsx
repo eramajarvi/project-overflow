@@ -1,8 +1,16 @@
 import React from "react";
 import p5 from "p5";
 
-import frag from "../helpers/shader-02/frag";
-import vert from "../helpers/shader-02/vert";
+// Llamar al importador de shaders dinamicamente
+import { frag, vert, shaderImporter } from "../helpers/shaderImporter";
+
+async function useShaders() {
+  await shaderImporter();
+}
+
+await useShaders();
+
+// Construyte el sketch de p5
 
 let mySize;
 let theShader;

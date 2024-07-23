@@ -1,7 +1,6 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import Sketch from "../components/Sketch";
-import ShaderOne from "../components/ShaderOne";
+import Shader from "../components/Shader.jsx";
 import WindowAITextTest from "../components/WindowAITextTest.tsx";
 
 import "../styles/global.css";
@@ -10,7 +9,7 @@ import "../styles/global.css";
 <Layout title="【ｓｅｇｍｅｎｔａｔｉｏｎｆａｕｌｔ】">
   <main>
     <div class="absolute">
-      <ShaderOne client:only="react" />
+      <Shader client:only="react" />
     </div>
     <div class="absolute" id="draggableWindow">
       <WindowAITextTest client:load />
