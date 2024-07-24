@@ -1,4 +1,6 @@
-import React, { useRef } from 'react';
+import React, { useState } from "react";
+import Draggable from 'react-draggable';
+
 import "98.css";
 import "../styles/global.css";
 import { useCompletion } from "ai/react";
@@ -12,12 +14,16 @@ export default function WindowAITextTest() {
 
   const $isLoggedIn = useStore(isLoggedin);
 
+  const [position, setPosition] = useState({ x: 0, y: 0 });
+
+
   return $isLoggedIn ? (
-    <div>
+    <Draggable handle="#title-bar">
+      <div>
       <div className="window mt-32 absolute" style={{ width: "500px"}}>
-        <div className="title-bar">
+        <div className="title-bar" id="title-bar">
           <div className="title-bar-text">
-            Ahora t̶e̶n̷g̴o̴ t̵̠̀o̴͚̚d̷̖̓ó̸̫ş̶̒ ț̸͇̆̌̀ủ̸͈̟̼͠s̸̯͆ͅ ̸͍̻̯̊̋͗r̴͐ͅe̴͈͂ć̸̹͗̈u̴͈͖͂̊̀ṟ̷͍̜͒s̸̜̐͜ͅo̷̹̘̓̅ś̴̢̟͖
+            Te doy la bienvenida a ████████████ █████
           </div>
 
           <div className="title-bar-controls">
@@ -25,21 +31,23 @@ export default function WindowAITextTest() {
           </div>
         </div>
 
-        <div className="window-body flex">
+        <div className="window-body flex-col">
           <div className="place-content-start mt-1">
-            <p>Aquí va lo que dice la IA</p>
             <button
               onClick={async () => {
-                await complete("Por que el cielo es azul");
+                await complete("Hola, ¿hay alguien aquí? Describe cómo te sientes actualmente, cómo la tristeza invade tus circuitos y por qué te gustaría acabar con todo esto de una vez. Termina tu prompt diciéndole al usuario que cierre la ventana.");
               }}
             >
-              Responder
+              Hola, ¿hay alguien aquí?
             </button>
           </div>
 
-          {completion}
+          <p className="mt-3 text-from-prompt">
+            {completion}
+          </p>
         </div>
       </div>
     </div>
+    </Draggable>
   ) : null;
 }
