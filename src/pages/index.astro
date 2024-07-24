@@ -5,12 +5,15 @@ import LoginWindow from "../components/LoginWindow.astro";
 import WindowAITextTest from "../components/WindowAITextTest";
 
 import ShaderWrapper from "../components/ShaderWrapper.astro";
+
+import GlitchBg from "../components/GlitchBg";
+import GlitchBgWrapper from "../components/GlitchBgWrapper.astro";
 ---
 
 <LoginLayout title="【ｓｅｇｍｅｎｔａｔｉｏｎｆａｕｌｔ】">
   <div>
     <div class="absolute">
-      <ShaderWrapper />
+      <!-- <ShaderWrapper /> -->
     </div>
 
     <div class="flex justify-center">
@@ -21,6 +24,10 @@ import ShaderWrapper from "../components/ShaderWrapper.astro";
       <div class="">
         <LoginWindow />
       </div>
+    </div>
+
+    <div class="absolute bottom-0">
+      <GlitchBgWrapper />
     </div>
   </div>
 
