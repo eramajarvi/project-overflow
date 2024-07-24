@@ -2,13 +2,17 @@ import React, { useRef } from 'react';
 import "98.css";
 import "../styles/global.css";
 import { useCompletion } from "ai/react";
+import { useStore } from '@nanostores/react';
+import { isLoggedin } from '../store';
 
 export default function WindowAITextTest() {
   const { completion, complete } = useCompletion({
     api: "/api/completion",
   });
 
-  return (
+  const $isLoggedIn = useStore(isLoggedin);
+
+  return $isLoggedIn ? (
     <div>
       <div className="window mt-32 absolute" style={{ width: "500px"}}>
         <div className="title-bar">
@@ -26,7 +30,7 @@ export default function WindowAITextTest() {
             <p>Aquí va lo que dice la IA</p>
             <button
               onClick={async () => {
-                await complete("Crea un cuento corto sobre la situación actual de la humanidad");
+                await complete("Por que el cielo es azul");
               }}
             >
               Responder
@@ -37,5 +41,5 @@ export default function WindowAITextTest() {
         </div>
       </div>
     </div>
-  );
+  ) : null;
 }

@@ -1,10 +1,11 @@
 ---
 import "98.css";
 import "../styles/global.css";
+
 import passwordIcon from "../assets/password.png";
 ---
 
-<div class="window mt-32" style={{ width: "500px" }}>
+<div class="window mt-32" style={{ width: "500px" }} id="LoginWindow">
   <div class="title-bar">
     <div class="title-bar-text">
       Bienvenido a ｓｅｇｍｅｎｔａｔｉｏｎｆａｕｌｔ
@@ -64,20 +65,23 @@ import passwordIcon from "../assets/password.png";
     </div>
 
     <div class="flex flex-col">
-      <button class="mt-1 keyBind loginButton"> OK </button>
+      <button class="mt-1 keyBind loginButton" id="loginButton"> OK </button>
       <button class="mt-1 keyBind" disabled> Cancelar </button>
     </div>
   </div>
 </div>
 
 <script>
-  // Find all buttons with the `alert` class on the page.
-  const buttons = document.querySelectorAll("button.loginButton");
+  import { isLoggedin } from "../store.js";
 
-  // Handle clicks on each button.
-  buttons.forEach((button) => {
-    button.addEventListener("click", () => {
-      location.replace("/main");
-    });
-  });
+  // Set the store to true when the button is clicked
+  function logUserIn() {
+    isLoggedin.set(true);
+
+    // Once user is logged in, hides the LoginWindow component
+    document.getElementById("LoginWindow").style.display = "none";
+  }
+
+  // Attach the event listener to the Login button
+  document.getElementById("loginButton").addEventListener("click", logUserIn);
 </script>
