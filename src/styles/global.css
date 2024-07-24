@@ -30,6 +30,7 @@ html {
   font-family: "Tahoma", system-ui, sans-serif;
   background: #0f8787;
   background-size: 224px;
+  cursor: url("/assets/cursor.ico"), default !important;
 }
 
 code {
@@ -97,8 +98,11 @@ button,
   -webkit-font-smoothing: none;
 }
 
+button {
+  cursor: url("/assets/cursor-pointer.ico"), pointer !important;
+}
+
 .title-bar {
-  cursor: default;
   font-family: "Tahoma", Arial;
 }
 
