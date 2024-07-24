@@ -1,5 +1,6 @@
 import React from "react";
 import p5 from "p5";
+import { mountFlex } from "p5.flex";
 
 // Llamar al importador de shaders dinamicamente
 import { frag, vert, shaderImporter } from "../helpers/shaderImporter";
@@ -11,9 +12,9 @@ async function useShaders() {
 await useShaders();
 
 // Construyte el sketch de p5
-
-let mySize;
 let theShader;
+
+mountFlex(p5);
 
 class Sketch extends React.Component {
   constructor(props) {
@@ -24,6 +25,7 @@ class Sketch extends React.Component {
   }
 
   // This uses p5's instance mode for sketch creation and namespacing
+
   Sketch = (p) => {
     p.preload = () => {
       theShader = new p5.Shader(this.renderer, vert, frag);
@@ -33,11 +35,19 @@ class Sketch extends React.Component {
     // a p5 object "p"
     p.setup = () => {
       //Everyhting that normally happens in setup works
-      mySize = p.min(p.windowWidth, p.windowHeight) * 1.0;
+
       // shaders require WEBGL mode to work
       //p.createCanvas(mySize, (mySize / 16) * 9, p.WEBGL);
-      p.createCanvas(p.windowWidth, p.windowHeight, p.WEBGL);
-      p.noStroke();
+
+      p.createCanvas(p.windowWidth / 10, p.windowHeight / 10, p.WEBGL);
+
+      p.flex({
+        container: { parent: p.shadderContainer },
+        canvas: { fit: p.FILL, id: "bgShadder" },
+        stylePage: true,
+      });
+
+      p.pixelDensity(4);
     };
 
     p.draw = () => {
@@ -55,6 +65,8 @@ class Sketch extends React.Component {
 
       // rect gives us some geometry on the screen
       p.rect(0, 0, p.width, p.height);
+
+      p.scale(2);
     };
 
     p.windowResized = () => {
@@ -64,7 +76,9 @@ class Sketch extends React.Component {
 
   componentDidMount() {
     //We create a new p5 object on component mount, feed it
+
     this.myP5 = new p5(this.Sketch, this.myRef.current);
+    // this.myP5 = new p5(mountFlex(p5), this.myRef.current);
   }
 
   render() {

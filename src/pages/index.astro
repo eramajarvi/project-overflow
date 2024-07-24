@@ -5,25 +5,26 @@ import LoginWindow from "../components/LoginWindow.astro";
 import WindowAITextTest from "../components/WindowAITextTest";
 
 import ShaderWrapper from "../components/ShaderWrapper.astro";
+import TestShadderWrapper from "../components/TestShaderWrapper";
 
 import GlitchBg from "../components/GlitchBg";
 import GlitchBgWrapper from "../components/GlitchBgWrapper.astro";
 ---
 
 <LoginLayout title="【ｓｅｇｍｅｎｔａｔｉｏｎｆａｕｌｔ】">
-  <div>
-    <div class="absolute">
-      <!-- <ShaderWrapper /> -->
-    </div>
-
+  <div class="bgGradient">
     <div class="flex justify-center">
-      <div>
+      <div class="">
         <WindowAITextTest client:load />
       </div>
 
       <div class="">
         <LoginWindow />
       </div>
+    </div>
+
+    <div class="" id="shadderContainer">
+      <TestShadderWrapper client:only="react" />
     </div>
 
     <div class="absolute bottom-0">

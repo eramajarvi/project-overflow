@@ -19,7 +19,7 @@ export default function WindowAITextTest() {
 
   return $isLoggedIn ? (
     <Draggable handle="#title-bar" nodeRef={nodeRef}>
-      <div ref={nodeRef} className="window mt-32 absolute" style={{ width: "500px"}}>
+      <div ref={nodeRef} className="window mt-32" style={{ width: "500px"}}>
         <div className="title-bar" id="title-bar">
           <div className="title-bar-text">
             Te doy la bienvenida a ████████████ █████

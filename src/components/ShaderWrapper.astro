@@ -2,8 +2,8 @@
 import Shader from "./Shader.jsx";
 ---
 
-<div id="bgShadder" class="bgShadder">
-  <Shader client:only="react" />
+<div class="bgShadder hidden" id="shadderContainer">
+  <Shader client:only="react" id="bgShadder" />
 </div>
 
 <script>
@@ -12,8 +12,9 @@ import Shader from "./Shader.jsx";
   // Listen to changes in the store, and show/hide the dialog accordingly
   isLoggedin.subscribe((open) => {
     if (open) {
-      document.getElementById("bgShadder").style.display = "block";
+      document.getElementById("bgShadder").style.display = "none";
     } else {
+      console.log(open);
       document.getElementById("bgShadder").style.display = "none";
     }
   });
