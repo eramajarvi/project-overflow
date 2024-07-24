@@ -15,12 +15,11 @@ export default function WindowAITextTest() {
   const $isLoggedIn = useStore(isLoggedin);
 
   const [position, setPosition] = useState({ x: 0, y: 0 });
-
+  const nodeRef = React.useRef(null);
 
   return $isLoggedIn ? (
-    <Draggable handle="#title-bar">
-      <div>
-      <div className="window mt-32 absolute" style={{ width: "500px"}}>
+    <Draggable handle="#title-bar" nodeRef={nodeRef}>
+      <div ref={nodeRef} className="window mt-32 absolute" style={{ width: "500px"}}>
         <div className="title-bar" id="title-bar">
           <div className="title-bar-text">
             Te doy la bienvenida a ████████████ █████
@@ -47,7 +46,6 @@ export default function WindowAITextTest() {
           </p>
         </div>
       </div>
-    </div>
     </Draggable>
   ) : null;
 }
