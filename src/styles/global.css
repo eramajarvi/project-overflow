@@ -60,7 +60,7 @@ body {
   background: radial-gradient(
     circle at center,
     transparent,
-    rgba(255, 255, 255, 0.2)
+    rgba(47, 46, 46, 0.5)
   );
 
   background-size: 3px 3px;
@@ -69,6 +69,7 @@ body {
 
 .pixelated {
   image-rendering: pixelated;
+  image-rendering: crisp-edges;
 }
 .title-bar {
   font-family: "TahomaBold", Arial;
@@ -78,6 +79,11 @@ body {
 
 .keyBind:first-letter {
   text-decoration: underline;
+}
+
+.text-from-prompt {
+  font-size: 14px;
+  user-select: none;
 }
 
 .window,
