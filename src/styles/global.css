@@ -49,7 +49,7 @@ body {
 }
 
 /* Gradient background - based on https://codepen.io/coreh/pen/LQJBLa?editors=1100 */
-.bgGradient:before {
+.bgGradient::after {
   content: "";
   position: absolute;
   top: 0;
