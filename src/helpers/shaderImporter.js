@@ -8,9 +8,7 @@ async function shaderImporter() {
     return Math.floor(Math.random() * (max - min + 1)) + min;
   }
 
-  const shaderNum = getRandomInt(1, 7);
-
-  console.log(shaderNum);
+  const shaderNum = getRandomInt(5, 7);
 
   const fragModule = await import(`../helpers/shader-0${shaderNum}/frag.js`);
   const vertModule = await import(`../helpers/shader-0${shaderNum}/vert.js`);
