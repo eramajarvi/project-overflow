@@ -2,10 +2,9 @@
 import LoginLayout from "../layouts/LoginLayout.astro";
 
 import LoginWindow from "../components/LoginWindow.astro";
-import WindowAITextTest from "../components/WindowAITextTest";
+import WelcomePromptWindowdow from "../components/WelcomePromptWindow";
 
-import ShaderWrapper from "../components/ShaderWrapper.astro";
-import TestShadderWrapper from "../components/TestShaderWrapper";
+import ShaderWrapper from "../components/ShaderWrapper";
 
 import GlitchedBackground from "../components/GlitchedBackground.astro";
 ---
@@ -17,7 +16,7 @@ import GlitchedBackground from "../components/GlitchedBackground.astro";
       <!-- Windows Container -->
       <div class="flex justify-center">
         <div class="relative left-[100vh]" id="welcomePromptWindow">
-          <WindowAITextTest client:load />
+          <WelcomePromptWindowdow client:load />
         </div>
 
         <div class="relative" id="loginWindow">
@@ -27,7 +26,7 @@ import GlitchedBackground from "../components/GlitchedBackground.astro";
 
       <!-- Background Shader Container -->
       <div class="relative" id="shadderContainer">
-        <TestShadderWrapper client:only="react" />
+        <ShaderWrapper client:only="react" />
       </div>
 
       <!-- Glitch at bottom container -->
