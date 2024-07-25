@@ -16,11 +16,11 @@ import GlitchedBackground from "../components/GlitchedBackground.astro";
     <div class="relative">
       <!-- Windows Container -->
       <div class="flex justify-center">
-        <div class="relative">
+        <div class="relative left-[100vh]" id="welcomePromptWindow">
           <WindowAITextTest client:load />
         </div>
 
-        <div class="relative" id="LoginWindow">
+        <div class="relative" id="loginWindow">
           <LoginWindow />
         </div>
       </div>
@@ -47,7 +47,7 @@ import GlitchedBackground from "../components/GlitchedBackground.astro";
     function logUserIn() {
       isLoggedin.set(true);
       // Once user is logged in, hides the other components
-      document.getElementById("LoginWindow").style.display = "none";
+      document.getElementById("loginWindow").style.display = "none";
       document.getElementById("glitchedBottom").style.display = "none";
     }
   </script>

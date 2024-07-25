@@ -18,7 +18,7 @@ export default function WindowAITextTest() {
   const nodeRef = React.useRef(null);
 
   return $isLoggedIn ? (
-    <div className="absolute justify-center items-center flex">
+    <div className="absolute top-[100vh/2]">
       <Draggable handle="#title-bar" nodeRef={nodeRef}>
       <div ref={nodeRef} className="window relative" style={{ width: "500px"}}>
         <div className="title-bar" id="title-bar">
