@@ -68,10 +68,6 @@ class Sketch extends React.Component {
 
       p.scale(2);
     };
-
-    p.windowResized = () => {
-      p.resizeCanvas(p.windowWidth, p.windowHeight);
-    };
   };
 
   componentDidMount() {
