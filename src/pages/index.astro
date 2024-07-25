@@ -2,7 +2,8 @@
 import LoginLayout from "../layouts/LoginLayout.astro";
 
 import LoginWindow from "../components/LoginWindow.astro";
-import WelcomePromptWindowdow from "../components/WelcomePromptWindow";
+import WelcomePromptWindow from "../components/WelcomePromptWindow";
+import WarningWindow from "../components/WarningWindow";
 
 import ShaderWrapper from "../components/ShaderWrapper";
 
@@ -11,26 +12,31 @@ import GlitchedBackground from "../components/GlitchedBackground.astro";
 
 <LoginLayout title="【ｓｅｇｍｅｎｔａｔｉｏｎｆａｕｌｔ】">
   <!-- Main container -->
-  <div class="bgGradient">
+  <div class="bgGradient" id="mainContainer">
     <div class="relative">
       <!-- Windows Container -->
       <div class="flex justify-center">
         <div class="relative left-[100vh]" id="welcomePromptWindow">
-          <WelcomePromptWindowdow client:load />
+          <WelcomePromptWindow client:load />
         </div>
 
-        <div class="relative" id="loginWindow">
+        <div class="relative justify-center items-center" id="loginWindow">
           <LoginWindow />
+
+          <!-- Other modal windows -->
+          <div class="hidden absolute" id="warningWindow">
+            <WarningWindow client:load />
+          </div>
         </div>
       </div>
 
       <!-- Background Shader Container -->
-      <div class="relative" id="shadderContainer">
+      <div class="relative -z-50" id="shadderContainer">
         <ShaderWrapper client:only="react" />
       </div>
 
       <!-- Glitch at bottom container -->
-      <div class="fixed bottom-0" id="glitchedBottom">
+      <div class="fixed bottom-0 -z-10" id="glitchedBottom">
         <GlitchedBackground />
       </div>
     </div>
@@ -41,6 +47,12 @@ import GlitchedBackground from "../components/GlitchedBackground.astro";
 
     // Attach the event listener to the Login button
     document.getElementById("loginButton").addEventListener("click", logUserIn);
+    document
+      .getElementById("closeButton_LoginWindow")
+      .addEventListener("click", showWarningOnExit);
+    document
+      .getElementById("closeButton_WarningWindow")
+      .addEventListener("click", closeWarningWindow);
 
     // Set the store to true when the button is clicked
     function logUserIn() {
@@ -48,6 +60,14 @@ import GlitchedBackground from "../components/GlitchedBackground.astro";
       // Once user is logged in, hides the other components
       document.getElementById("loginWindow").style.display = "none";
       document.getElementById("glitchedBottom").style.display = "none";
+    }
+
+    function showWarningOnExit() {
+      document.getElementById("warningWindow").style.display = "flex";
+    }
+
+    function closeWarningWindow() {
+      document.getElementById("warningWindow").style.display = "none";
     }
   </script>
 </LoginLayout>
