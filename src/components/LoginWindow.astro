@@ -5,7 +5,7 @@ import "../styles/global.css";
 import passwordIcon from "../assets/password.png";
 ---
 
-<div class="window mt-32" style={{ width: "550px" }} id="LoginWindow">
+<div class="window mt-32" style={{ width: "550px" }}>
   <div class="title-bar">
     <div class="title-bar-text">
       Bienvenido a ｓｅｇｍｅｎｔａｔｉｏｎｆａｕｌｔ
@@ -70,18 +70,3 @@ import passwordIcon from "../assets/password.png";
     </div>
   </div>
 </div>
-
-<script>
-  import { isLoggedin } from "../store.js";
-
-  // Set the store to true when the button is clicked
-  function logUserIn() {
-    isLoggedin.set(true);
-
-    // Once user is logged in, hides the LoginWindow component
-    document.getElementById("LoginWindow").style.display = "none";
-  }
-
-  // Attach the event listener to the Login button
-  document.getElementById("loginButton").addEventListener("click", logUserIn);
-</script>

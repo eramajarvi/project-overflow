@@ -1,8 +1,9 @@
+import "98.css";
+import "../styles/global.css";
+
 import React, { useState } from "react";
 import Draggable from 'react-draggable';
 
-import "98.css";
-import "../styles/global.css";
 import { useCompletion } from "ai/react";
 import { useStore } from '@nanostores/react';
 import { isLoggedin } from '../store';
@@ -14,12 +15,12 @@ export default function WindowAITextTest() {
 
   const $isLoggedIn = useStore(isLoggedin);
 
-  const [position, setPosition] = useState({ x: 0, y: 0 });
   const nodeRef = React.useRef(null);
 
   return $isLoggedIn ? (
-    <Draggable handle="#title-bar" nodeRef={nodeRef}>
-      <div ref={nodeRef} className="window mt-32" style={{ width: "500px"}}>
+    <div className="absolute justify-center items-center flex">
+      <Draggable handle="#title-bar" nodeRef={nodeRef}>
+      <div ref={nodeRef} className="window relative" style={{ width: "500px"}}>
         <div className="title-bar" id="title-bar">
           <div className="title-bar-text">
             Te doy la bienvenida a ████████████ █████
@@ -46,6 +47,7 @@ export default function WindowAITextTest() {
           </p>
         </div>
       </div>
-    </Draggable>
-  ) : null;
+      </Draggable>
+    </div>
+  ) : null
 }
