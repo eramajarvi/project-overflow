@@ -6,6 +6,8 @@ import LoginWindow from "../components/LoginWindow.tsx";
 import WarningWindow from "../components/WarningWindow.tsx";
 import ShaderWrapper from "../components/ShaderWrapper.jsx";
 
+import GlitchedBg from "../assets/glitchedBackground.gif"
+
 import React from "react";
 
 export default function Desktop() {
@@ -52,7 +54,7 @@ export default function Desktop() {
         {/* Glitch at bottom container */}
         <div className="fixed bottom-0 -z-10" id="glitchedBottom">
           <img
-            src="../src/assets/glitchedBackground.gif"
+            src={GlitchedBg.src}
             alt="Glitched Background"
             loading="lazy"
             decoding="async"
