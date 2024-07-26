@@ -33,6 +33,10 @@ html {
   cursor: url("/assets/cursor.ico"), default !important;
 }
 
+.cursor-wait {
+  cursor: url("/assets/cursor-progress.ico"), wait !important;
+}
+
 code {
   font-family:
     Menlo,
