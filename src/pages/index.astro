@@ -1,48 +1,13 @@
 ---
 import LoginLayout from "../layouts/LoginLayout.astro";
 
-import LoginWindow from "../components/LoginWindow.astro";
-import WelcomePromptWindow from "../components/WelcomePromptWindow";
-import WarningWindow from "../components/WarningWindow";
-
-import ShaderWrapper from "../components/ShaderWrapper";
-
-import GlitchedBackground from "../components/GlitchedBackground.astro";
+import Desktop from "./desktop";
 ---
 
 <LoginLayout title="【ｓｅｇｍｅｎｔａｔｉｏｎｆａｕｌｔ】">
-  <!-- Main container -->
-  <div class="bgGradient" id="mainContainer">
-    <div class="relative">
-      <!-- Windows Container -->
-      <div class="flex justify-center">
-        <div class="relative left-[100vh]" id="welcomePromptWindow">
-          <WelcomePromptWindow client:load />
-        </div>
+  <Desktop client:only="react" />
 
-        <div class="relative justify-center items-center" id="loginWindow">
-          <LoginWindow />
-
-          <!-- Other modal windows -->
-          <div class="hidden absolute" id="warningWindow">
-            <WarningWindow client:load />
-          </div>
-        </div>
-      </div>
-
-      <!-- Background Shader Container -->
-      <div class="relative -z-50" id="shadderContainer">
-        <ShaderWrapper client:only="react" />
-      </div>
-
-      <!-- Glitch at bottom container -->
-      <div class="fixed bottom-0 -z-10" id="glitchedBottom">
-        <GlitchedBackground />
-      </div>
-    </div>
-  </div>
-
-  <script>
+  <!-- <script>
     import { isLoggedin } from "../store";
 
     // Attach the event listener to the Login button
@@ -69,5 +34,5 @@ import GlitchedBackground from "../components/GlitchedBackground.astro";
     function closeWarningWindow() {
       document.getElementById("warningWindow").style.display = "none";
     }
-  </script>
+  </script> -->
 </LoginLayout>

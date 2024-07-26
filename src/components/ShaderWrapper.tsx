@@ -5,12 +5,14 @@ import { isLoggedin } from "../store.js";
 
 import Shader from "./Shader.jsx";
 
-export default function TestShadderWrapper() {
-  const $isLoggedIn = useStore(isLoggedin);
+function ShaderWrapper() {
 
-  return $isLoggedIn ? (
+  return(
     <div>
+      {/* This wrapper is needed to contain the shader in a component */}
       <Shader />
     </div>
-  ) : null;
-}
+  );
+} 
+
+export default ShaderWrapper;

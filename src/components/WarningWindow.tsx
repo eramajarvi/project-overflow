@@ -1,20 +1,21 @@
 import "98.css";
 import "../styles/global.css";
 
-import React from "react";
+import React, { useState } from "react";
 import Draggable from "react-draggable";
 
 import warningIcon from "../assets/exclamation.png";
 
-export default function WarningWindow() {
+function WarningWindow({visibilityProps}) {
   const nodeRef = React.useRef(null);
+  const { isVisible, setIsVisible} = visibilityProps;
 
   return (
     <div className="absolute mt-4">
       <Draggable
         handle="#title-bar-warning-window"
         nodeRef={nodeRef}
-        positionOffset={{ x: "50%", y: "-170%" }}
+        positionOffset={{ x: "50%", y: "-110%" }}
       >
         <div
           ref={nodeRef}
@@ -27,7 +28,7 @@ export default function WarningWindow() {
             <div className="title-bar-controls">
               <button
                 aria-label="Close"
-                id="closeButton_WarningWindow"
+                onClick={() => setIsVisible(false)}
               ></button>
             </div>
           </div>
@@ -37,7 +38,7 @@ export default function WarningWindow() {
               <img src={warningIcon.src} className="pixelated" />
             </div>
             <div className="ml-3">
-              <p>No hay salida</p>
+              <p>No hay salida. No. No. No. No. No. No hay salida.</p>
             </div>
           </div>
         </div>
@@ -45,3 +46,5 @@ export default function WarningWindow() {
     </div>
   );
 }
+
+export default WarningWindow;

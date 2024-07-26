@@ -34,7 +34,7 @@ html {
 }
 
 .cursor-wait {
-  cursor: url("/assets/cursor-progress.ico"), wait !important;
+  cursor: url("/assets/cursor-progress.ico"), wait;
 }
 
 code {

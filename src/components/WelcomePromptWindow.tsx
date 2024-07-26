@@ -5,26 +5,23 @@ import React, { useState } from "react";
 import Draggable from "react-draggable";
 
 import { useCompletion } from "ai/react";
-import { useStore } from "@nanostores/react";
-import { isLoggedin } from "../store";
 
-export default function WelcomePromptWindow() {
+function WelcomePromptWindow() {
   const { completion, complete } = useCompletion({
     api: "/api/completion",
   });
 
-  const $isLoggedIn = useStore(isLoggedin);
-
   const nodeRef = React.useRef(null);
 
   const [isDisabled, setIsDisabled] = useState(false);
+  const [isHidden, setIsHidden] = useState("hidden");
 
-  return $isLoggedIn ? (
+  return (
     <div className="absolute">
       <Draggable
         handle="#title-bar"
         nodeRef={nodeRef}
-        positionOffset={{ x: "-50%", y: "0%" }}
+        positionOffset={{ x: "100%", y: "0%" }}
       >
         <div
           ref={nodeRef}
@@ -37,7 +34,16 @@ export default function WelcomePromptWindow() {
             </div>
 
             <div className="title-bar-controls">
-              <button aria-label="Close"></button>
+              <button
+                aria-label="Close"
+                onClick={async () => {
+                  setIsDisabled(true);
+                  await complete(
+                    "El usuario intentó irse cerrando la ventana donde estás. Dile que no hay salida y que ahora están encerrados.",
+                  );
+                  setIsHidden("");
+                }}
+              ></button>
             </div>
           </div>
 
@@ -54,12 +60,16 @@ export default function WelcomePromptWindow() {
               >
                 Hola, ¿hay alguien aquí?
               </button>
-            </div>
 
-            <p className="mt-3 text-from-prompt">{completion}</p>
+              <p className="mt-3 text-from-prompt">{completion}</p>
+
+              <button className={`mt-3 ${isHidden}`}>Forzar cierre</button>
+            </div>
           </div>
         </div>
       </Draggable>
     </div>
-  ) : null;
+  );
 }
+
+export default WelcomePromptWindow;
