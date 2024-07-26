@@ -11,7 +11,11 @@ export default function WarningWindow() {
 
   return (
     <div className="absolute mt-4">
-      <Draggable handle="#title-bar-warning-window" nodeRef={nodeRef}>
+      <Draggable
+        handle="#title-bar-warning-window"
+        nodeRef={nodeRef}
+        positionOffset={{ x: "50%", y: "-170%" }}
+      >
         <div
           ref={nodeRef}
           className="window relative"
