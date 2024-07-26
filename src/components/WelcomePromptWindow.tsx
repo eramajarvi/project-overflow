@@ -8,7 +8,7 @@ import { useCompletion } from "ai/react";
 
 import forceCloseIcon from "../assets/network-drive-error.ico"
 
-function WelcomePromptWindow() {
+function WelcomePromptWindow({ window1Visibility}) {
   const { completion, complete } = useCompletion({
     api: "/api/completion",
   });
@@ -17,6 +17,7 @@ function WelcomePromptWindow() {
 
   const [isDisabled, setIsDisabled] = useState(false);
   const [isHidden, setIsHidden] = useState("hidden");
+  const {isWindow1Visible, setIsWindow1Visible} = window1Visibility;
 
   return (
     <div className="absolute">
@@ -65,7 +66,7 @@ function WelcomePromptWindow() {
 
               <p className="mt-3 text-from-prompt">{completion}</p>
 
-              <button className={`mt-3 ${isHidden}`}>
+              <button className={`mt-3 ${isHidden}`} onClick={() => {setIsWindow1Visible(false)}}>
                 <div className="flex">
                   <img src={forceCloseIcon} width={"16"} />
                   <p className="ml-2">Forzar cierre</p>

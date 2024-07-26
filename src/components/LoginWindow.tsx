@@ -6,15 +6,12 @@ import Draggable from "react-draggable";
 import PasswordIcon from "../assets/password.png";
 
 
-function LoginWindow({ authProps, waitingProps, visibilityProps, shaderVisibility }) {
+function LoginWindow({ loginWindowProps }) {
   const nodeRef = React.useRef(null);
 
-  const { isLoggedIn, setIsLoggedIn } = authProps;
-  const { isWaiting, setIsWaiting } = waitingProps;
-  const { isVisible, setIsVisible} = visibilityProps;
-  const { isShaderVisible, setIsShaderVisible} = shaderVisibility;
+  const { isLoggedIn, setIsLoggedIn, isVisible, setIsVisible, isShaderVisible, setIsShaderVisible, isWindow1Visible, setIsWindow1Visible } = loginWindowProps;
 
-  return isLoggedIn ? null : (
+  return (
     <Draggable
       handle="#login-window-title-bar"
       nodeRef={nodeRef}
@@ -76,11 +73,11 @@ function LoginWindow({ authProps, waitingProps, visibilityProps, shaderVisibilit
 
               <div>
                 <p className="explainerOnLogin italic text-[10px] mt-2.5">
-                  La contraseña es su API Key de Google.
+                  La contraseña es tu API Key de Google.
                 </p>
 
                 <p className="explainerOnLogin italic text-[10px] -mt-1">
-                  Pero no la necesito.
+                  No es necesaria, no es necesaria.
                 </p>
               </div>
             </div>
@@ -92,11 +89,10 @@ function LoginWindow({ authProps, waitingProps, visibilityProps, shaderVisibilit
               id="loginButton"
               onClick={() => {
                 setTimeout(() => {
-                  // Hacer que el cursor simule una carga ? 
-                }, 2500);
-                setIsShaderVisible(true)
-                setIsWaiting("cursor-wait");
+                  setIsWindow1Visible(true);
+                }, 5);
                 setIsLoggedIn(true);
+                setIsShaderVisible(true);
               }}
             >
               OK

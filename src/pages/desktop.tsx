@@ -23,6 +23,11 @@ export default function Desktop() {
   const [isWaiting, setIsWaiting] = React.useState("");
   const waitingProps = {isWaiting, setIsWaiting}
 
+  const [isWindow1Visible, setIsWindow1Visible] = React.useState(false)
+  const window1Visibility = {isWindow1Visible, setIsWindow1Visible}
+
+  const loginWindowProps = { isLoggedIn, setIsLoggedIn, isVisible, setIsVisible, isShaderVisible, setIsShaderVisible, isWindow1Visible, setIsWindow1Visible }
+
   return (
     <div className="bgGradient" id="mainContainer">
       <div className="relative">
@@ -30,14 +35,14 @@ export default function Desktop() {
         {/* Windows Container */}
         <div className="flex justify-center">
           <div className="relative" id="welcomePromptWindow">
-            {isLoggedIn ? <WelcomePromptWindow /> : null}
+            {isWindow1Visible ? <WelcomePromptWindow window1Visibility={window1Visibility} /> : null}
           </div>
 
           <div
             className="relative justify-center items-center"
             id="loginWindow"
           >
-            <LoginWindow authProps={authProps} waitingProps={waitingProps} visibilityProps={visibilityProps} shaderVisibility={shaderVisibility}/>
+            {isLoggedIn ? null : <LoginWindow loginWindowProps={loginWindowProps}/>}
 
             {/* Other modal windows */}
             <div className="relative">
