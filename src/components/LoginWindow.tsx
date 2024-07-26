@@ -3,7 +3,7 @@ import "../styles/global.css";
 
 import React, { useState } from "react";
 import Draggable from "react-draggable";
-import WarningWindow from "../assets/exclamation.png";
+import PasswordIcon from "../assets/password.png";
 
 
 function LoginWindow({ authProps, waitingProps, visibilityProps, shaderVisibility }) {
@@ -38,7 +38,7 @@ function LoginWindow({ authProps, waitingProps, visibilityProps, shaderVisibilit
           <div className="place-content-start mt-1">
             <img
               className="pixelated h-12 w-12"
-              src={WarningWindow.src}
+              src={PasswordIcon.src}
               alt="Password icon to log in into Windows"
             />
           </div>
