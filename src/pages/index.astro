@@ -6,33 +6,4 @@ import Desktop from "./desktop";
 
 <LoginLayout title="【ｓｅｇｍｅｎｔａｔｉｏｎｆａｕｌｔ】">
   <Desktop client:only="react" />
-
-  <!-- <script>
-    import { isLoggedin } from "../store";
-
-    // Attach the event listener to the Login button
-    document.getElementById("loginButton").addEventListener("click", logUserIn);
-    document
-      .getElementById("closeButton_LoginWindow")
-      .addEventListener("click", showWarningOnExit);
-    document
-      .getElementById("closeButton_WarningWindow")
-      .addEventListener("click", closeWarningWindow);
-
-    // Set the store to true when the button is clicked
-    function logUserIn() {
-      isLoggedin.set(true);
-      // Once user is logged in, hides the other components
-      document.getElementById("loginWindow").style.display = "none";
-      document.getElementById("glitchedBottom").style.display = "none";
-    }
-
-    function showWarningOnExit() {
-      document.getElementById("warningWindow").style.display = "flex";
-    }
-
-    function closeWarningWindow() {
-      document.getElementById("warningWindow").style.display = "none";
-    }
-  </script> -->
 </LoginLayout>

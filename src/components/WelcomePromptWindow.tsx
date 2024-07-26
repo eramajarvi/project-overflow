@@ -6,6 +6,8 @@ import Draggable from "react-draggable";
 
 import { useCompletion } from "ai/react";
 
+import forceCloseIcon from "../assets/network-drive-error.ico"
+
 function WelcomePromptWindow() {
   const { completion, complete } = useCompletion({
     api: "/api/completion",
@@ -63,7 +65,12 @@ function WelcomePromptWindow() {
 
               <p className="mt-3 text-from-prompt">{completion}</p>
 
-              <button className={`mt-3 ${isHidden}`}>Forzar cierre</button>
+              <button className={`mt-3 ${isHidden}`}>
+                <div className="flex">
+                  <img src={forceCloseIcon} width={"16"} />
+                  <p className="ml-2">Forzar cierre</p>
+                </div>
+              </button>
             </div>
           </div>
         </div>
