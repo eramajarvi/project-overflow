@@ -59,17 +59,25 @@ function CreditsWindow({ creditsWindowVisibility }) {
                 </summary>
                 <ul>
                   <li>
-                    <a href="https://p5js.org/">🏠 p5.js página de inicio</a>{" "}
+                    <a href="https://p5js.org/" target="_blank">
+                      🏠 p5.js página de inicio
+                    </a>{" "}
                   </li>
 
                   <li>
-                    <a href="https://github.com/processing/p5.js">
+                    <a
+                      href="https://github.com/processing/p5.js"
+                      target="_blank"
+                    >
                       🧑‍💻 p5.js repositorio de código
                     </a>{" "}
                   </li>
 
                   <li>
-                    <a href="https://github.com/processing/p5.js/blob/main/license.txt">
+                    <a
+                      href="https://github.com/processing/p5.js/blob/main/license.txt"
+                      target="_blank"
+                    >
                       📝 p5.js licencia
                     </a>{" "}
                   </li>
@@ -82,19 +90,22 @@ function CreditsWindow({ creditsWindowVisibility }) {
                 </summary>
                 <ul>
                   <li>
-                    <a href="https://p5.glitch.me/">
+                    <a href="https://p5.glitch.me/" target="_blank">
                       🏠 p5.glitch página de inicio
                     </a>{" "}
                   </li>
 
                   <li>
-                    <a href="https://github.com/ffd8/p5.glitch">
+                    <a href="https://github.com/ffd8/p5.glitch" target="_blank">
                       🧑‍💻 p5.glitch repositorio de código
                     </a>{" "}
                   </li>
 
                   <li>
-                    <a href="https://github.com/ffd8/p5.glitch/blob/master/LICENSE">
+                    <a
+                      href="https://github.com/ffd8/p5.glitch/blob/master/LICENSE"
+                      target="_blank"
+                    >
                       📝 p5.glitch licencia
                     </a>{" "}
                   </li>
@@ -107,19 +118,22 @@ function CreditsWindow({ creditsWindowVisibility }) {
                 </summary>
                 <ul>
                   <li>
-                    <a href="https://jdan.github.io/98.css/">
+                    <a href="https://jdan.github.io/98.css/" target="_blank">
                       🏠 98.css página de inicio
                     </a>{" "}
                   </li>
 
                   <li>
-                    <a href="https://github.com/jdan/98.css">
+                    <a href="https://github.com/jdan/98.css" target="_blank">
                       🧑‍💻 98.css repositorio de código
                     </a>{" "}
                   </li>
 
                   <li>
-                    <a href="https://github.com/jdan/98.css/blob/main/LICENSE">
+                    <a
+                      href="https://github.com/jdan/98.css/blob/main/LICENSE"
+                      target="_blank"
+                    >
                       📝 98.css licencia
                     </a>{" "}
                   </li>
