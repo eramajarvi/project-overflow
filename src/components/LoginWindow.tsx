@@ -73,11 +73,11 @@ function LoginWindow({ loginWindowProps }) {
 
               <div>
                 <p className="explainerOnLogin italic text-[10px] mt-2.5">
-                  La contraseña es tu API Key de Google.
+                  La contraseña es su API Key de Google.
                 </p>
 
                 <p className="explainerOnLogin italic text-[10px] -mt-1">
-                  No es necesaria, no es necesaria.
+                  No es necesaria, no es n e c e s a r i a.
                 </p>
               </div>
             </div>

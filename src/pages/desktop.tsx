@@ -29,7 +29,11 @@ export default function Desktop() {
   const loginWindowProps = { isLoggedIn, setIsLoggedIn, isVisible, setIsVisible, isShaderVisible, setIsShaderVisible, isWindow1Visible, setIsWindow1Visible }
 
   return (
-    <div className="bgGradient" id="mainContainer">
+    <>
+    <div className="crt"></div>
+
+    {/* Main Desktop Container */}
+    <div className="make-cursor-wait" id="mainContainer">
       <div className="relative">
 
         {/* Windows Container */}
@@ -69,5 +73,6 @@ export default function Desktop() {
         </div>
       </div>
     </div>
+    </>
   );
 }
