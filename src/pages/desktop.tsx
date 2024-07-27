@@ -4,6 +4,7 @@ import "../styles/global.css";
 import WelcomePromptWindow from "../components/WelcomePromptWindow.tsx";
 import LoginWindow from "../components/LoginWindow.tsx";
 import WarningWindow from "../components/WarningWindow.tsx";
+import CreditsWindow from "../components/CreditsWindow.tsx";
 import ShaderWrapper from "../components/ShaderWrapper.jsx";
 
 import GlitchedBg from "../assets/glitchedBackground.gif"
@@ -23,10 +24,13 @@ export default function Desktop() {
   const [isWaiting, setIsWaiting] = React.useState("");
   const waitingProps = {isWaiting, setIsWaiting}
 
+  const [isCreditsWindowVisible, setIsCreditsWindowVisible] = React.useState(false)
+  const creditsWindowVisibility = {isCreditsWindowVisible, setIsCreditsWindowVisible}
+
   const [isWindow1Visible, setIsWindow1Visible] = React.useState(false)
   const window1Visibility = {isWindow1Visible, setIsWindow1Visible}
 
-  const loginWindowProps = { isLoggedIn, setIsLoggedIn, isVisible, setIsVisible, isShaderVisible, setIsShaderVisible, isWindow1Visible, setIsWindow1Visible }
+  const loginWindowProps = { isLoggedIn, setIsLoggedIn, isVisible, setIsVisible, isShaderVisible, setIsShaderVisible, isWindow1Visible, setIsWindow1Visible,isCreditsWindowVisible, setIsCreditsWindowVisible }
 
   return (
     <>
@@ -51,6 +55,8 @@ export default function Desktop() {
             {/* Other modal windows */}
             <div className="relative">
               {isVisible ? <WarningWindow visibilityProps={visibilityProps}/> : null}
+
+              {isCreditsWindowVisible ? <CreditsWindow creditsWindowVisibility={creditsWindowVisibility} /> : null}
             </div>
           </div>
         </div>

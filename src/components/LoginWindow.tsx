@@ -9,7 +9,7 @@ import PasswordIcon from "../assets/password.png";
 function LoginWindow({ loginWindowProps }) {
   const nodeRef = React.useRef(null);
 
-  const { isLoggedIn, setIsLoggedIn, isVisible, setIsVisible, isShaderVisible, setIsShaderVisible, isWindow1Visible, setIsWindow1Visible } = loginWindowProps;
+  const { isLoggedIn, setIsLoggedIn, isVisible, setIsVisible, isShaderVisible, setIsShaderVisible, isWindow1Visible, setIsWindow1Visible,isCreditsWindowVisible, setIsCreditsWindowVisible } = loginWindowProps;
 
   return (
     <Draggable
@@ -27,7 +27,7 @@ function LoginWindow({ loginWindowProps }) {
             Bienvenido a ｓｅｇｍｅｎｔａｔｉｏｎｆａｕｌｔ
           </div>
           <div className="title-bar-controls">
-            <button aria-label="Help" />
+            <button aria-label="Help" onClick={() => setIsCreditsWindowVisible(true)}/>
             <button aria-label="Close" onClick={() => setIsVisible(true)} />
           </div>
         </div>

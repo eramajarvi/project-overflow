@@ -49,6 +49,18 @@ body {
   background: #0f8787;
 }
 
+ul.tree-view {
+  font-family: "Tahoma", system-ui, sans-serif;
+}
+
+ul.tree-view details > summary:before {
+  width: 10px;
+  height: 10px;
+  margin-right: 5px;
+  margin-top: 2px;
+  padding-left: 0px;
+}
+
 /* Gradient background - based on https://codepen.io/coreh/pen/LQJBLa?editors=1100 */
 .crt::before {
   content: "";
