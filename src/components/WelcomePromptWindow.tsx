@@ -6,9 +6,9 @@ import Draggable from "react-draggable";
 
 import { useCompletion } from "ai/react";
 
-import forceCloseIcon from "../assets/network-drive-error.ico"
+import forceCloseIcon from "../assets/network-drive-error.ico";
 
-function WelcomePromptWindow({ window1Visibility}) {
+function WelcomePromptWindow({ window1Visibility, helpmeWindowVisibility }) {
   const { completion, complete } = useCompletion({
     api: "/api/completion",
   });
@@ -17,7 +17,9 @@ function WelcomePromptWindow({ window1Visibility}) {
 
   const [isDisabled, setIsDisabled] = useState(false);
   const [isHidden, setIsHidden] = useState("hidden");
-  const {isWindow1Visible, setIsWindow1Visible} = window1Visibility;
+  const { isWindow1Visible, setIsWindow1Visible } = window1Visibility;
+  const { isHelpWindowVisible, setHelpmeWindowVisible } =
+    helpmeWindowVisibility;
 
   return (
     <div className="absolute">
@@ -66,7 +68,13 @@ function WelcomePromptWindow({ window1Visibility}) {
 
               <p className="mt-3 text-from-prompt">{completion}</p>
 
-              <button className={`mt-3 ${isHidden}`} onClick={() => {setIsWindow1Visible(false)}}>
+              <button
+                className={`mt-3 ${isHidden}`}
+                onClick={() => {
+                  setIsWindow1Visible(false);
+                  setHelpmeWindowVisible(true);
+                }}
+              >
                 <div className="flex">
                   <img src={forceCloseIcon} width={"16"} />
                   <p className="ml-2">Forzar cierre</p>
