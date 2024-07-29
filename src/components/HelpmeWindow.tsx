@@ -6,26 +6,41 @@ import { range, sample } from "../helpers/range";
 import React, { useState, useEffect } from "react";
 import Draggable from "react-draggable";
 
+const WINDOWS_QUANTITY = 150;
+const WINDOWS_VISIBLE_DELAY = 10; // in ms
+
+const getRandomPosition = () => ({
+  randomX: sample(range(0, window.innerWidth / 1.3, 10)),
+  randomY: sample(range(-window.innerHeight / 2, window.innerHeight / 2.5, 10)),
+});
+
 function HelpmeWindow() {
   const nodeRef = React.useRef(null);
 
   const [count, setCount] = useState(0);
+  const [positions, setPositions] = useState([]);
 
   useEffect(() => {
-    if (count < 100) {
+    // Generate positions only once when the component mounts
+    const initialPositions = Array.from(
+      { length: WINDOWS_QUANTITY },
+      getRandomPosition,
+    );
+    setPositions(initialPositions);
+  }, []);
+
+  useEffect(() => {
+    if (count < WINDOWS_QUANTITY) {
       const timer = setTimeout(() => {
         setCount(count + 1);
-      }, 500);
+      }, WINDOWS_VISIBLE_DELAY);
       return () => clearTimeout(timer);
     }
   }, [count]);
 
-  // Define a random positition for the window
-  const { innerWidth: width, innerHeight: height } = window;
-  const randomX = sample(range(0, width / 1.3, 10));
-  const randomY = sample(range(-height / 2, height / 2.5, 10));
+  const Wrapper = ({ positionOffset }) => {
+    const { randomX, randomY } = positionOffset;
 
-  const Wrapper = ({}) => {
     return (
       <div className="absolute">
         <Draggable
@@ -56,8 +71,8 @@ function HelpmeWindow() {
 
   return (
     <div>
-      {Array.from({ length: count }, (_, index) => (
-        <Wrapper key={index} />
+      {positions.slice(0, count).map((position, index) => (
+        <Wrapper key={index} positionOffset={position} />
       ))}
     </div>
   );
