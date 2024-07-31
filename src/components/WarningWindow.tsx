@@ -6,9 +6,9 @@ import Draggable from "react-draggable";
 
 import warningIcon from "../assets/exclamation.png";
 
-function WarningWindow({visibilityProps}) {
+function WarningWindow({ visibilityProps }) {
   const nodeRef = React.useRef(null);
-  const { isVisible, setIsVisible} = visibilityProps;
+  const { isWarningWindowVisible, setIsWarningWindowVisible } = visibilityProps;
 
   return (
     <div className="absolute mt-4">
@@ -28,7 +28,7 @@ function WarningWindow({visibilityProps}) {
             <div className="title-bar-controls">
               <button
                 aria-label="Close"
-                onClick={() => setIsVisible(false)}
+                onClick={() => setIsWarningWindowVisible(false)}
               ></button>
             </div>
           </div>

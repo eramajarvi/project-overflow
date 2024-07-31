@@ -23,15 +23,18 @@ const getRandomPosition = () => ({
   badPhrase: sample(BAD_PHRASES),
 });
 
-function HelpmeWindow() {
+function HelpmeWindow({ helpmeWindowVisibility }) {
   const nodeRef = React.useRef(null);
 
   const [count, setCount] = useState(0);
   const [positions, setPositions] = useState([]);
   const [isExitVisible, setExitVisible] = useState(false);
 
+  const { isHelpWindowVisible, setHelpmeWindowVisible } =
+    helpmeWindowVisibility;
+
+  // Generate positions only once when the component mounts
   useEffect(() => {
-    // Generate positions only once when the component mounts
     const initialPositions = Array.from(
       { length: WINDOWS_QUANTITY },
       getRandomPosition,
@@ -39,6 +42,7 @@ function HelpmeWindow() {
     setPositions(initialPositions);
   }, []);
 
+  // Counts the amount of HelpMe windows visibility and their delay
   useEffect(() => {
     if (count < WINDOWS_QUANTITY) {
       const timer = setTimeout(() => {
@@ -56,6 +60,7 @@ function HelpmeWindow() {
     }
   }, [count]);
 
+  // Wrapper to contain all the HelpMe windows
   const Wrapper = ({ positionOffset }) => {
     const { randomX, randomY, badPhrase } = positionOffset;
 
@@ -92,6 +97,7 @@ function HelpmeWindow() {
     );
   };
 
+  // Contains the exit window to help the AI
   const ExitWindow = () => {
     return (
       <div className="fixed w-[100vw] h-[100vh] top-0 left-0  bg-sky-500/70">
@@ -128,8 +134,16 @@ function HelpmeWindow() {
                 </p>
 
                 <div className="mt-4">
-                  <button>Ayudar al sistema</button>
-                  <button disabled>No le voy a ayudar</button>
+                  <button
+                    className="keyBind"
+                    onClick={() => setHelpmeWindowVisible(false)}
+                  >
+                    Ayudar al sistema
+                  </button>
+
+                  <button className="keyBind" disabled>
+                    No le voy a ayudar
+                  </button>
                 </div>
               </div>
             </div>

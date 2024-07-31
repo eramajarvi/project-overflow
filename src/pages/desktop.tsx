@@ -15,8 +15,9 @@ import GlitchedBg from "../assets/glitchedBackground.gif";
 import React, { useEffect } from "react";
 
 export default function Desktop() {
-  const [isVisible, setIsVisible] = React.useState(false);
-  const visibilityProps = { isVisible, setIsVisible };
+  const [isWarningWindowVisible, setIsWarningWindowVisible] =
+    React.useState(false);
+  const visibilityProps = { isWarningWindowVisible, setIsWarningWindowVisible };
 
   const [isShaderVisible, setIsShaderVisible] = React.useState(false);
   const shaderVisibility = { isShaderVisible, setIsShaderVisible };
@@ -40,7 +41,6 @@ export default function Desktop() {
     isHelpWindowVisible,
     setHelpmeWindowVisible,
   };
-  const [helpMeCount, setHelpMeCount] = React.useState(0);
 
   const [isWindow1Visible, setIsWindow1Visible] = React.useState(false);
   const window1Visibility = { isWindow1Visible, setIsWindow1Visible };
@@ -48,8 +48,8 @@ export default function Desktop() {
   const loginWindowProps = {
     isLoggedIn,
     setIsLoggedIn,
-    isVisible,
-    setIsVisible,
+    isWarningWindowVisible,
+    setIsWarningWindowVisible,
     isShaderVisible,
     setIsShaderVisible,
     isWindow1Visible,
@@ -75,7 +75,9 @@ export default function Desktop() {
                 />
               ) : null}
 
-              {isHelpWindowVisible ? <HelpmeWindow /> : null}
+              {isHelpWindowVisible ? (
+                <HelpmeWindow helpmeWindowVisibility={helpmeWindowVisibility} />
+              ) : null}
             </div>
 
             <div className="relative"></div>
@@ -90,7 +92,7 @@ export default function Desktop() {
 
               {/* Other modal windows */}
               <div className="relative">
-                {isVisible ? (
+                {isWarningWindowVisible ? (
                   <WarningWindow visibilityProps={visibilityProps} />
                 ) : null}
 

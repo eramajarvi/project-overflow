@@ -5,11 +5,21 @@ import React, { useState } from "react";
 import Draggable from "react-draggable";
 import PasswordIcon from "../assets/password.png";
 
-
 function LoginWindow({ loginWindowProps }) {
   const nodeRef = React.useRef(null);
 
-  const { isLoggedIn, setIsLoggedIn, isVisible, setIsVisible, isShaderVisible, setIsShaderVisible, isWindow1Visible, setIsWindow1Visible,isCreditsWindowVisible, setIsCreditsWindowVisible } = loginWindowProps;
+  const {
+    isLoggedIn,
+    setIsLoggedIn,
+    isWarningWindowVisible,
+    setIsWarningWindowVisible,
+    isShaderVisible,
+    setIsShaderVisible,
+    isWindow1Visible,
+    setIsWindow1Visible,
+    isCreditsWindowVisible,
+    setIsCreditsWindowVisible,
+  } = loginWindowProps;
 
   return (
     <Draggable
@@ -17,18 +27,20 @@ function LoginWindow({ loginWindowProps }) {
       nodeRef={nodeRef}
       positionOffset={{ x: "0%", y: "20%" }}
     >
-      <div
-        ref={nodeRef}
-        className="window mt-32"
-        style={{ width: "550px" }}
-      >
+      <div ref={nodeRef} className="window mt-32" style={{ width: "550px" }}>
         <div className="title-bar" id="login-window-title-bar">
           <div className="title-bar-text">
             Bienvenido a ｓｅｇｍｅｎｔａｔｉｏｎｆａｕｌｔ
           </div>
           <div className="title-bar-controls">
-            <button aria-label="Help" onClick={() => setIsCreditsWindowVisible(true)}/>
-            <button aria-label="Close" onClick={() => setIsVisible(true)} />
+            <button
+              aria-label="Help"
+              onClick={() => setIsCreditsWindowVisible(true)}
+            />
+            <button
+              aria-label="Close"
+              onClick={() => setIsWarningWindowVisible(true)}
+            />
           </div>
         </div>
         <div className="window-body flex justify-around">
