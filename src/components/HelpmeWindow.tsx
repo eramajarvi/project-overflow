@@ -13,8 +13,9 @@ import warningIcon from "../assets/exclamation.png";
 import chipIcon from "../assets/chip.ico";
 import smileIcon from "../assets/smile.ico";
 
-const WINDOWS_QUANTITY = 100;
+const WINDOWS_QUANTITY = 130;
 const WINDOWS_VISIBLE_DELAY = 10; // in ms
+const EXIT_VISIBLE_DELAY = 2500;
 
 const getRandomPosition = () => ({
   randomX: sample(range(0, window.innerWidth / 1.3, 8)),
@@ -46,9 +47,12 @@ function HelpmeWindow() {
       return () => clearTimeout(timer);
     }
 
+    // Makes the exit window visible
     if (count >= WINDOWS_QUANTITY) {
-      console.log("mostrar ventana de salida");
-      setExitVisible(true);
+      const timer = setTimeout(() => {
+        setExitVisible(true);
+      }, EXIT_VISIBLE_DELAY);
+      return () => clearTimeout(timer);
     }
   }, [count]);
 
