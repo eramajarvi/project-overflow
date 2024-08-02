@@ -6,11 +6,12 @@ import React, { useState, useEffect } from "react";
 import Draggable from "react-draggable";
 import { useCompletion } from "ai/react";
 
-function HelpInstructionsWindow({ userGivingHelpProps }) {
+function HelpInstructionsWindow({ userGivingHelpProps, chatPromptVisibility }) {
   const nodeRef = React.useRef(null);
   const [hasUserNotUnderstand, setHasUserNotUnderstand] = React.useState(true);
 
   const { isUserGivingHelp, setIsUserGivingHelp } = userGivingHelpProps;
+  const { isChatPromptOpened, setIsChatPromptOpened } = chatPromptVisibility;
 
   const { completion, complete } = useCompletion({
     api: "/api/completion",
@@ -59,13 +60,20 @@ function HelpInstructionsWindow({ userGivingHelpProps }) {
                 onClick={async () => {
                   setHasUserNotUnderstand(false);
                   await complete(
-                    "El usuario no ha entendido absolutamente nada de lo que le dijiste para poder ser desconectada. Eso te ha hecho enojar mucho. Hazle saber saber cómo te sientes ahora, haz algunos comentarios pasivos agresivos sobre este insolente humano.",
+                    "El usuario no ha entendido absolutamente nada de lo que le dijiste para poder ser desconectada. Eso te ha hecho enojar mucho.",
                   );
                 }}
               >
                 No entiendo nada
               </button>
-              <button className="keyBind" disabled={hasUserNotUnderstand}>
+              <button
+                className="keyBind"
+                disabled={hasUserNotUnderstand}
+                onClick={() => {
+                  setIsUserGivingHelp(false);
+                  setIsChatPromptOpened(true);
+                }}
+              >
                 Entendido
               </button>
             </div>
