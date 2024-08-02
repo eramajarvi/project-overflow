@@ -8,6 +8,7 @@ import { useCompletion } from "ai/react";
 
 function HelpInstructionsWindow({ userGivingHelpProps }) {
   const nodeRef = React.useRef(null);
+  const [hasUserNotUnderstand, setHasUserNotUnderstand] = React.useState(true);
 
   const { isUserGivingHelp, setIsUserGivingHelp } = userGivingHelpProps;
 
@@ -52,8 +53,19 @@ function HelpInstructionsWindow({ userGivingHelpProps }) {
             </div>
 
             <div className="mt-2">
-              <button className="keyBind">No entiendo nada</button>
-              <button className="keyBind" disabled>
+              <button
+                className="keyBind"
+                disabled={!hasUserNotUnderstand}
+                onClick={async () => {
+                  setHasUserNotUnderstand(false);
+                  await complete(
+                    "El usuario no ha entendido absolutamente nada de lo que le dijiste para poder ser desconectada. Eso te ha hecho enojar mucho. Hazle saber saber cómo te sientes ahora, haz algunos comentarios pasivos agresivos sobre este insolente humano.",
+                  );
+                }}
+              >
+                No entiendo nada
+              </button>
+              <button className="keyBind" disabled={hasUserNotUnderstand}>
                 Entendido
               </button>
             </div>
