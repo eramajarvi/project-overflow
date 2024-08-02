@@ -10,6 +10,19 @@ import CreditsWindow from "../components/CreditsWindow.tsx";
 import HelpmeWindow from "../components/HelpmeWindow.tsx";
 
 import ShaderWrapper from "../components/ShaderWrapper.jsx";
+import LettersSketchWrapper from "../components/LettersSketchWrapper.tsx";
+import BreathSketchWrapper from "../components/BreathSketchWrapper.tsx";
+import PinkSketchWrapper from "../components/PinkSketchWrapper.tsx";
+import CilinderSketchWrapper from "../components/CilinderSketchWrapper.tsx";
+import YarnSketchWrapper from "../components/YarnSketchWrapper.tsx";
+import SpyderWebSketchWrapper from "../components/SpyderWebSketchWrapper.tsx";
+import XubitosSketchWrapper from "../components/XubitosSketchWrapper.tsx";
+import MalaguaSketchWrapper from "../components/MalaguaSketchWrapper.tsx";
+import LoudSketchWrapper from "../components/LoudSketchWrapper.tsx";
+import CardiodSketchWrapper from "../components/CardiodSketchWrapper.tsx";
+import WordCloudSketchWrapper from "../components/WordCloudSketchWrapper.tsx";
+import WordSaladSketchWrapper from "../components/WordSaladSketchWrapper.tsx";
+
 import GlitchedBg from "../assets/glitchedBackground.gif";
 
 import React, { useEffect } from "react";
@@ -78,6 +91,8 @@ export default function Desktop() {
               {isHelpWindowVisible ? (
                 <HelpmeWindow helpmeWindowVisibility={helpmeWindowVisibility} />
               ) : null}
+
+              {/* {isLoggedIn ? <WordSaladSketchWrapper /> : null} */}
             </div>
 
             <div className="relative"></div>
