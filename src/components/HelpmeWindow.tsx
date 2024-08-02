@@ -23,7 +23,7 @@ const getRandomPosition = () => ({
   badPhrase: sample(BAD_PHRASES),
 });
 
-function HelpmeWindow({ helpmeWindowVisibility }) {
+function HelpmeWindow({ helpmeWindowVisibility, userGivingHelpProps }) {
   const nodeRef = React.useRef(null);
 
   const [count, setCount] = useState(0);
@@ -35,6 +35,8 @@ function HelpmeWindow({ helpmeWindowVisibility }) {
 
   const { isHelpWindowVisible, setHelpmeWindowVisible } =
     helpmeWindowVisibility;
+
+  const { isUserGivingHelp, setIsUserGivingHelp } = userGivingHelpProps;
 
   const { completion, complete } = useCompletion({
     api: "/api/completion",
@@ -174,6 +176,7 @@ function HelpmeWindow({ helpmeWindowVisibility }) {
                     className={`${isHowToHelpButtonVisible}`}
                     onClick={() => {
                       setHelpmeWindowVisible(false);
+                      setIsUserGivingHelp(true);
                     }}
                   >
                     ¿Cómo te podría ayudar?

@@ -3,12 +3,15 @@ import "../styles/global.css";
 
 import { range } from "../helpers/range.js";
 
+// Windows components
 import WelcomePromptWindow from "../components/WelcomePromptWindow.tsx";
 import LoginWindow from "../components/LoginWindow.tsx";
 import WarningWindow from "../components/WarningWindow.tsx";
 import CreditsWindow from "../components/CreditsWindow.tsx";
 import HelpmeWindow from "../components/HelpmeWindow.tsx";
+import HelpInstructionsWindow from "../components/HelpInstructionsWindow.tsx";
 
+// Wrappers
 import ShaderWrapper from "../components/ShaderWrapper.jsx";
 import LettersSketchWrapper from "../components/LettersSketchWrapper.tsx";
 import BreathSketchWrapper from "../components/BreathSketchWrapper.tsx";
@@ -71,6 +74,9 @@ export default function Desktop() {
     setIsCreditsWindowVisible,
   };
 
+  const [isUserGivingHelp, setIsUserGivingHelp] = React.useState(false);
+  const userGivingHelpProps = { isUserGivingHelp, setIsUserGivingHelp };
+
   return (
     <>
       <div className="crt"></div>
@@ -89,10 +95,18 @@ export default function Desktop() {
               ) : null}
 
               {isHelpWindowVisible ? (
-                <HelpmeWindow helpmeWindowVisibility={helpmeWindowVisibility} />
+                <HelpmeWindow
+                  helpmeWindowVisibility={helpmeWindowVisibility}
+                  userGivingHelpProps={userGivingHelpProps}
+                />
               ) : null}
 
-              {/* {isLoggedIn ? <WordSaladSketchWrapper /> : null} */}
+              {isUserGivingHelp ? <LettersSketchWrapper /> : null}
+              {isUserGivingHelp ? (
+                <HelpInstructionsWindow
+                  userGivingHelpProps={userGivingHelpProps}
+                />
+              ) : null}
             </div>
 
             <div className="relative"></div>
