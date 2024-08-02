@@ -164,6 +164,7 @@ button {
 .text-area-chat-prompt {
   font-family: "Tahoma", Arial;
   font-size: 14px;
+  resize: none;
 }
 
 @keyframes flicker {

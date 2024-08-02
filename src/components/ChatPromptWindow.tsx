@@ -29,7 +29,7 @@ function ChatPromptWindow() {
               <textarea
                 className="text-area-chat-prompt"
                 id="text20"
-                rows={1}
+                rows={2}
               ></textarea>
               <button>Enviar</button>
             </div>
