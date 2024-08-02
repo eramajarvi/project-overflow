@@ -161,6 +161,11 @@ button {
   background: black;
 }
 
+.text-area-chat-prompt {
+  font-family: "Tahoma", Arial;
+  font-size: 14px;
+}
+
 @keyframes flicker {
   0% {
     opacity: 0.27861;
