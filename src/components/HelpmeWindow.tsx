@@ -155,7 +155,7 @@ function HelpmeWindow({ helpmeWindowVisibility, userGivingHelpProps }) {
                   ayuda, ¿qué desea hacer?
                 </p>
 
-                <p>{completion}</p>
+                <p className="text-from-prompt">{completion}</p>
 
                 <div className="mt-4">
                   <button
@@ -173,7 +173,7 @@ function HelpmeWindow({ helpmeWindowVisibility, userGivingHelpProps }) {
                   </button>
 
                   <button
-                    className={`${isHowToHelpButtonVisible}`}
+                    className={`keyBind ${isHowToHelpButtonVisible}`}
                     onClick={() => {
                       setHelpmeWindowVisible(false);
                       setIsUserGivingHelp(true);

@@ -46,13 +46,16 @@ function HelpInstructionsWindow({ userGivingHelpProps }) {
           </div>
 
           <div className="window-body flex-col" id="HelpInstructionsWindow">
-            <div className="">
+            <div className="text-from-prompt">
               {/* This wrapper is needed to contain the sketch in a component */}
               {completion}
             </div>
 
             <div className="mt-2">
-              <button>No entiendo nada</button>
+              <button className="keyBind">No entiendo nada</button>
+              <button className="keyBind" disabled>
+                Entendido
+              </button>
             </div>
           </div>
         </div>
