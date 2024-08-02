@@ -10,6 +10,7 @@ import WarningWindow from "../components/WarningWindow.tsx";
 import CreditsWindow from "../components/CreditsWindow.tsx";
 import HelpmeWindow from "../components/HelpmeWindow.tsx";
 import HelpInstructionsWindow from "../components/HelpInstructionsWindow.tsx";
+import ChatPromptWindow from "../components/ChatPromptWindow.tsx";
 
 // Wrappers
 import ShaderWrapper from "../components/ShaderWrapper.jsx";
@@ -77,6 +78,9 @@ export default function Desktop() {
   const [isUserGivingHelp, setIsUserGivingHelp] = React.useState(false);
   const userGivingHelpProps = { isUserGivingHelp, setIsUserGivingHelp };
 
+  const [isChatPromptOpened, setIsChatPromptOpened] = React.useState(false);
+  const chatPromptVisibility = { isChatPromptOpened, setIsChatPromptOpened };
+
   return (
     <>
       <div className="crt"></div>
@@ -105,8 +109,11 @@ export default function Desktop() {
               {isUserGivingHelp ? (
                 <HelpInstructionsWindow
                   userGivingHelpProps={userGivingHelpProps}
+                  chatPromptVisibility={chatPromptVisibility}
                 />
               ) : null}
+
+              {isChatPromptOpened ? <ChatPromptWindow /> : null}
             </div>
 
             <div className="relative"></div>
