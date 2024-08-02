@@ -42,25 +42,25 @@ class LettersSketch extends React.Component {
           curvesPerGlyph: 2,
           cantCentroids: 20,
           repeatCentroid: true,
-          chaos: 5,
+          chaos: 3,
         },
         simple: {},
       },
       isIntense: true,
       letter:
         "Borgotaba. Los viscoleantes toves, rijando en la solea, tadralaban… Misébiles estaban los borgoves y algo momios los verdos bratchilbaban. ¡Cuidado, hijo, con el Fablistanón! ¡Con sus dientes y garras, muerde, apresa! ¡Cuidado con el pájaro Sonsón y rehuye al frumioso Magnapresa!",
-      rows: 12,
+      rows: 15,
       cols: 25,
-      factorGlyphSize: 18.2,
+      factorGlyphSize: 2.2,
       strokeWeight: 2,
     };
 
     function getCentroid(data) {
       const size = data.size ? data.size : 1;
-      const region = Math.ceil(size / data.cantCentroids);
-      const r = region * (data.i + Math.random());
-      const x = 0.5 * r * Math.cos(Math.PI * (2 * Math.random() + 0.75));
-      const y = r * Math.sin(2 * Math.PI * Math.random());
+      const region = p.ceil(size / data.cantCentroids);
+      const r = region * (data.i + p.random());
+      const x = 0.5 * r * p.cos(p.PI * (2 * p.random() + 0.75));
+      const y = r * p.sin(2 * p.PI * p.random());
 
       return [x, y];
     }
@@ -71,10 +71,10 @@ class LettersSketch extends React.Component {
       const BASE_H = 0;
       const BASE_S = 0;
       const BASE_B = 95;
-      const spacingX = Math.floor(data.dimensions.width / CANT_SEPARATIONS);
-      const spacingY = Math.floor(data.dimensions.height / CANT_LINES);
+      const spacingX = p.floor(data.dimensions.width / CANT_SEPARATIONS);
+      const spacingY = p.floor(data.dimensions.height / CANT_LINES);
       const marginX = spacingX * 0.5;
-      const marginY = Math.floor(data.dimensions.width / CANT_LINES);
+      const marginY = p.floor(data.dimensions.width / CANT_LINES);
 
       p.colorMode(p.HSB, 360, 100, 100, 100);
       p.background(p.color(BASE_H, BASE_S, BASE_B));
@@ -109,20 +109,18 @@ class LettersSketch extends React.Component {
       const getTypes = {
         simple: (data) => {
           const instructions = [];
-          const rand = Math.random();
+          const rand = p.random();
 
           let instruction;
 
           // Set random bezier control points
           const control1 = {
-            x: Math.floor(Math.random(-data.spacingX * 2, data.spacingX * 2)),
-            y: Math.floor(
-              Math.random(-data.spacingY * 1.25, data.spacingY * 1.25),
-            ),
+            x: p.floor(p.random(-data.spacingX * 2, data.spacingX * 2)),
+            y: p.floor(p.random(-data.spacingY * 1.25, data.spacingY * 1.25)),
           };
           const control2 = {
-            x: Math.floor(Math.random(-data.spacingX / 2, data.spacingX / 3)),
-            y: Math.floor(Math.random(-data.spacingY / 3, data.spacingY / 2)),
+            x: p.floor(p.random(-data.spacingX / 2, data.spacingX / 3)),
+            y: p.floor(p.random(-data.spacingY / 3, data.spacingY / 2)),
           };
 
           instruction = {
@@ -186,26 +184,26 @@ class LettersSketch extends React.Component {
           let c1, c2, a1, a2, ran;
 
           for (let i = 0; i < curvesPerGlyph; i++) {
-            ran = Math.random();
+            ran = p.random();
 
             a1 =
               ran > 0.12 || i === 0
                 ? pStart
-                : centroids[Math.floor(Math.random(0, centroids.length - 1))];
+                : centroids[p.floor(p.random(0, centroids.length - 1))];
             centroids = repeatCentroid
               ? centroids
               : centroids.filter((c) => {
                   return c !== a1;
                 });
 
-            c1 = centroids[Math.floor(Math.random(0, centroids.length - 1))];
+            c1 = centroids[p.floor(p.random(0, centroids.length - 1))];
             centroids = repeatCentroid
               ? centroids
               : centroids.filter((c) => {
                   return c !== c1;
                 });
 
-            c2 = centroids[Math.floor(Math.random(0, centroids.length - 1))];
+            c2 = centroids[p.floor(p.random(0, centroids.length - 1))];
             centroids = repeatCentroid
               ? centroids
               : centroids.filter((c) => {
@@ -215,19 +213,19 @@ class LettersSketch extends React.Component {
             a2 =
               ran > 0.15 || i === curvesPerGlyph - 1
                 ? pEnd
-                : centroids[Math.floor(Math.random(0, centroids.length - 1))];
+                : centroids[p.floor(p.random(0, centroids.length - 1))];
 
             instruction = {
               type: "curve",
               vertex: [
                 [baseX + a1[0], baseY + a1[1]],
                 [
-                  baseX + c1[0] * (chaos > 2 && Math.random() > 0.5 ? -1 : 1),
-                  baseY + c1[1] * (chaos > 1 && Math.random() > 0.5 ? -1 : 1),
+                  baseX + c1[0] * (chaos > 2 && p.random() > 0.5 ? -1 : 1),
+                  baseY + c1[1] * (chaos > 1 && p.random() > 0.5 ? -1 : 1),
                 ],
                 [
-                  baseX + c2[0] * (chaos > 3 && Math.random() > 0.5 ? -1 : 1),
-                  baseY + c2[1] * (chaos > 0 && Math.random() > 0.5 ? -1 : 1),
+                  baseX + c2[0] * (chaos > 3 && p.random() > 0.5 ? -1 : 1),
+                  baseY + c2[1] * (chaos > 0 && p.random() > 0.5 ? -1 : 1),
                 ],
                 [baseX + a2[0], baseY + a2[1]],
               ],
@@ -457,7 +455,7 @@ class LettersSketch extends React.Component {
             style: {
               strokeWeight: data.strokeWeight
                 ? data.strokeWeight
-                : Math.floor(4 * Math.random()),
+                : p.floor(4 * p.random()),
             },
           };
           instructions.push(instruction);
@@ -508,8 +506,8 @@ class LettersSketch extends React.Component {
           const FACTOR = 0.15;
 
           p.circle(
-            v[0][0] * (1 + Math.random() * FACTOR) + x,
-            v[0][1] * (1 + Math.random() * FACTOR) + y,
+            v[0][0] * (1 + p.random() * FACTOR) + x,
+            v[0][1] * (1 + p.random() * FACTOR) + y,
             ANCHURA * 0.015,
           );
         },
@@ -535,14 +533,14 @@ class LettersSketch extends React.Component {
           const FACTOR = 0.75;
 
           p.bezier(
-            v[0][0] * (1 - Math.random() * FACTOR) + x,
-            v[0][1] * (1 - Math.random() * FACTOR) + y,
-            v[1][0] * (1 + Math.random() * FACTOR) + x,
-            v[1][1] * (1 + Math.random() * FACTOR) + y,
-            v[2][0] * (1 - Math.random() * FACTOR) + x,
-            v[2][1] * (1 + Math.random() * FACTOR) + y,
-            v[3][0] * (1 + Math.random() * FACTOR) + x,
-            v[3][1] * (1 - Math.random() * FACTOR) + y,
+            v[0][0] * (1 - p.random() * FACTOR) + x,
+            v[0][1] * (1 - p.random() * FACTOR) + y,
+            v[1][0] * (1 + p.random() * FACTOR) + x,
+            v[1][1] * (1 + p.random() * FACTOR) + y,
+            v[2][0] * (1 - p.random() * FACTOR) + x,
+            v[2][1] * (1 + p.random() * FACTOR) + y,
+            v[3][0] * (1 + p.random() * FACTOR) + x,
+            v[3][1] * (1 - p.random() * FACTOR) + y,
           );
         },
       };
@@ -603,10 +601,10 @@ class LettersSketch extends React.Component {
         "A notebook-like background, containing incomprehensible text. Its characters' strokes get progressively wider as they approach the edge.",
       );
 
-      spacingX = Math.floor(ANCHURA / md.cols);
-      spacingY = Math.floor(ALTURA / md.rows);
+      spacingX = p.floor(ANCHURA / md.cols);
+      spacingY = p.floor(ALTURA / md.rows);
       marginX = spacingX * 0.5;
-      marginY = Math.floor(ALTURA / md.rows);
+      marginY = p.floor(ALTURA / md.rows);
       x = marginX;
       y = spacingY * 0.25;
 
@@ -636,7 +634,7 @@ class LettersSketch extends React.Component {
 
       modes = {
         default: ({ x, y }, glyphData) => {
-          const ran = Math.random();
+          const ran = p.random();
 
           if (p.jumped || ran > 0.15) {
             glyphData.x = x;
@@ -671,7 +669,7 @@ class LettersSketch extends React.Component {
         if (md.isIntense) {
           p.strokeWeight(5);
 
-          md.factorGlyphSize += 0.4 * Math.ceil((2 * x) / (ANCHURA - marginX));
+          md.factorGlyphSize += 0.4 * p.ceil((2 * x) / (ANCHURA - marginX));
         }
         modes[md.mode]({ x, y }, glyphData);
         p.pop();

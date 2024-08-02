@@ -17,7 +17,7 @@ function LettersSketchWrapper() {
         nodeRef={nodeRef}
         positionOffset={{ x: "0%", y: "0%" }}
       >
-        <div ref={nodeRef} className="window" style={{ width: "300px" }}>
+        <div ref={nodeRef} className="window" style={{ width: "350px" }}>
           <div className="title-bar" id="letters-window-title-bar">
             <div className="title-bar-text">Letters</div>
           </div>
