@@ -1,6 +1,6 @@
 // Use this file as template to create new window components :)
 import "98.css";
-import "../styles/global.css";
+import "../../styles/global.css";
 
 import React, { useState } from "react";
 import Draggable from "react-draggable";
