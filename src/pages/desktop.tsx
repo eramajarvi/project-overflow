@@ -86,7 +86,7 @@ export default function Desktop() {
       <div className="crt"></div>
 
       {/* Main Desktop Container */}
-      <div className="make-cursor-wait" id="mainContainer">
+      <div id="mainContainer">
         <div className="relative">
           {/* Windows Container */}
           <div className="flex justify-center">

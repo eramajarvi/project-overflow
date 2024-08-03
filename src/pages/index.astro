@@ -1,11 +1,18 @@
 ---
 import LoginLayout from "../layouts/LoginLayout.astro";
 import Desktop from "./desktop";
+import TooSmallWindow from "./tooSmall";
 ---
 
 <LoginLayout title="【ｓｅｇｍｅｎｔａｔｉｏｎｆａｕｌｔ】">
   <p class="absolute bottom-0 right-4">
     Y29uZWN0YWRvIHBvciBqYW1lcyBAZXJhbWFqYWFydmk=
   </p>
-  <Desktop client:only="react" />
+  <span class="hidden lg:block">
+    <Desktop client:only="react" />
+  </span>
+
+  <span class="lg:hidden">
+    <TooSmallWindow client:only="react" />
+  </span>
 </LoginLayout>
