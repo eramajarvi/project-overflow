@@ -16,7 +16,7 @@ function LettersSketchWrapper() {
       <Draggable
         handle="#letters-window-title-bar"
         nodeRef={nodeRef}
-        positionOffset={{ x: "50%", y: "20%" }}
+        positionOffset={{ x: "50%", y: "-10%" }}
       >
         <div ref={nodeRef} className="window" style={{ width: "350px" }}>
           <div className="title-bar" id="letters-window-title-bar">

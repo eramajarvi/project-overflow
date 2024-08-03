@@ -14,7 +14,7 @@ function ChatPromptWindow() {
       <Draggable
         handle="#chat-prompt-window-title-bar"
         nodeRef={nodeRef}
-        positionOffset={{ x: "300%", y: "150%" }}
+        positionOffset={{ x: "150%", y: "180%" }}
       >
         <div ref={nodeRef} className="window" style={{ width: "500px" }}>
           <div className="title-bar" id="chat-prompt-window-title-bar">
