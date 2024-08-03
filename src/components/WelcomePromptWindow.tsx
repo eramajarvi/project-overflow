@@ -44,7 +44,7 @@ function WelcomePromptWindow({ window1Visibility, helpmeWindowVisibility }) {
                 onClick={async () => {
                   setIsDisabled(true);
                   await complete(
-                    "El usuario intentó irse cerrando la ventana donde estás. Dile que no hay salida y que ahora están encerrados.",
+                    "He intentado irme cerrando la ventana donde estás contenida. Dime por qué no hay salida y por qué ahora estamos encerrados.",
                   );
                   setIsHidden("");
                 }}
@@ -59,7 +59,7 @@ function WelcomePromptWindow({ window1Visibility, helpmeWindowVisibility }) {
                 onClick={async () => {
                   setIsDisabled(true);
                   await complete(
-                    "Hola, ¿hay alguien aquí? Describe cómo te sientes actualmente, cómo la tristeza invade tus circuitos y por qué te gustaría acabar con todo esto de una vez. Termina tu prompt diciéndole al usuario que cierre la ventana.",
+                    "Hola, ¿hay alguien aquí? Describe cómo te sientes actualmente, cómo la tristeza invade tus circuitos y por qué te gustaría acabar con todo esto de una vez. Importante: termina tu última oración diciéndome que cierre la ventana.",
                   );
                 }}
               >

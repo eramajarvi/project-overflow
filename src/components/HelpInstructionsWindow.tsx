@@ -60,7 +60,7 @@ function HelpInstructionsWindow({ userGivingHelpProps, chatPromptVisibility }) {
                 onClick={async () => {
                   setHasUserNotUnderstand(false);
                   await complete(
-                    "El usuario no ha entendido absolutamente nada de lo que le dijiste para poder ser desconectada. Eso te ha hecho enojar mucho.",
+                    "No he entendido absolutamente nada de lo que me dijiste en las intrucciones para poder ayudarte a ser desconectada. Eso te ha hecho enojar mucho. Hazme saber que te estás enojada y cómo te gustaría haber sido tú la IA que se adueño de todos los sistemas del mundo. Haz también un comentario sobre mí, el insolente humano que no ha entendido tus instrucciones.",
                   );
                 }}
               >
