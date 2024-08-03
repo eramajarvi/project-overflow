@@ -55,7 +55,7 @@ class Sketch extends React.Component {
       // shader() sets the active shader with our shader
       p.shader(theShader);
 
-      theShader.setUniform("u_resolution", [p.width, p.height]);
+      theShader.setUniform("u_resolution", [p.width * 2, p.height * 2]);
       theShader.setUniform("u_time", p.millis() / 1000.0);
       theShader.setUniform("u_frame", p.frameCount / 1.0);
       theShader.setUniform("u_mouse", [
