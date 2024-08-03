@@ -14,18 +14,18 @@ import ChatPromptWindow from "../components/ChatPromptWindow.tsx";
 
 // Wrappers
 import ShaderWrapper from "../components/ShaderWrapper.jsx";
-import LettersSketchWrapper from "../components/LettersSketchWrapper.tsx";
-import BreathSketchWrapper from "../components/BreathSketchWrapper.tsx";
-import PinkSketchWrapper from "../components/PinkSketchWrapper.tsx";
-import CilinderSketchWrapper from "../components/CilinderSketchWrapper.tsx";
-import YarnSketchWrapper from "../components/YarnSketchWrapper.tsx";
-import SpyderWebSketchWrapper from "../components/SpyderWebSketchWrapper.tsx";
-import XubitosSketchWrapper from "../components/XubitosSketchWrapper.tsx";
-import MalaguaSketchWrapper from "../components/MalaguaSketchWrapper.tsx";
-import LoudSketchWrapper from "../components/LoudSketchWrapper.tsx";
-import CardiodSketchWrapper from "../components/CardiodSketchWrapper.tsx";
-import WordCloudSketchWrapper from "../components/WordCloudSketchWrapper.tsx";
-import WordSaladSketchWrapper from "../components/WordSaladSketchWrapper.tsx";
+import LettersSketchWrapper from "../components/sketches/LettersSketchWrapper.tsx";
+import BreathSketchWrapper from "../components/sketches/BreathSketchWrapper.tsx";
+import PinkSketchWrapper from "../components/sketches/PinkSketchWrapper.tsx";
+import CilinderSketchWrapper from "../components/sketches/CilinderSketchWrapper.tsx";
+import YarnSketchWrapper from "../components/sketches/YarnSketchWrapper.tsx";
+import SpyderWebSketchWrapper from "../components/sketches/SpyderWebSketchWrapper.tsx";
+import XubitosSketchWrapper from "../components/sketches/XubitosSketchWrapper.tsx";
+import MalaguaSketchWrapper from "../components/sketches/MalaguaSketchWrapper.tsx";
+import LoudSketchWrapper from "../components/sketches/LoudSketchWrapper.tsx";
+import CardiodSketchWrapper from "../components/sketches/CardiodSketchWrapper.tsx";
+import WordCloudSketchWrapper from "../components/sketches/WordCloudSketchWrapper.tsx";
+import WordSaladSketchWrapper from "../components/sketches/WordSaladSketchWrapper.tsx";
 
 import GlitchedBg from "../assets/glitchedBackground.gif";
 

@@ -2,7 +2,7 @@ import React from "react";
 import p5 from "p5";
 import { mountFlex } from "p5.flex";
 
-import { BAD_PHRASES } from "../helpers/badPhrases.js";
+import { BAD_PHRASES } from "../../helpers/badPhrases.js";
 
 class WordSaladSketch extends React.Component {
   constructor(props) {
