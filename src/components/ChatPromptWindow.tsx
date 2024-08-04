@@ -1,8 +1,10 @@
 import "98.css";
 import "../styles/global.css";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Draggable from "react-draggable";
+
+import MathTextbookSketchWrapper from "./sketches/MathTexbookSketchWrapper";
 
 import { useChat } from "ai/react";
 
@@ -12,11 +14,24 @@ function ChatPromptWindow({ SettingsWindowVisibility }) {
 
   const { messages, input, setInput, append } = useChat();
 
+  const [count, setCount] = React.useState(3);
+  const [isUserLimited, setIsUserLimited] = React.useState(false);
+  const [isEndReached, setIsEndReached] = React.useState(false);
+
   const { isSettingsWindowOpened, setIsSettingsWindowOpened } =
     SettingsWindowVisibility;
 
+  useEffect(() => {
+    if (count === 0) {
+      setIsUserLimited(true);
+      setIsEndReached(true);
+    }
+  }, [count]);
+
   return (
     <>
+      {isEndReached ? <MathTextbookSketchWrapper /> : null}
+
       <div className="absolute">
         <Draggable
           handle="#system-response-window-title-bar"
@@ -38,10 +53,10 @@ function ChatPromptWindow({ SettingsWindowVisibility }) {
             </div>
 
             <div className="window-body flex justify-normal">
-              <div>
-                {messages.map((message, index) => (
-                  <div key={index}>{message.content}</div>
-                ))}
+              <div className="text-from-prompt">
+                {messages.length > 0 && (
+                  <div>{messages[messages.length - 1].content}</div>
+                )}
               </div>
             </div>
           </div>
@@ -65,26 +80,38 @@ function ChatPromptWindow({ SettingsWindowVisibility }) {
               </div>
             </div>
 
-            <div className="window-body flex justify-normal">
-              <div className="field-row-stacked" style={{ width: "500px" }}>
-                <textarea
-                  className="text-area-chat-prompt"
-                  id="text20"
-                  rows={2}
-                  placeholder="Convence a la IA que el mundo está bien y es hora de irse"
-                  maxLength={256}
-                  value={input}
-                  onChange={(event) => {
-                    setInput(event.target.value);
-                  }}
-                ></textarea>
-                <button
-                  onClick={async () => {
-                    append({ content: input, role: "user" });
-                  }}
-                >
-                  Enviar
-                </button>
+            <div className="window-body flex-col">
+              <div className="flex mb-2">
+                <div className="field-row-stacked" style={{ width: "500px" }}>
+                  <textarea
+                    className="text-area-chat-prompt"
+                    id="text20"
+                    rows={2}
+                    placeholder="Convence a la IA que el mundo está bien y es hora de irse"
+                    maxLength={256}
+                    value={input}
+                    onChange={(event) => {
+                      setInput(event.target.value);
+                    }}
+                  ></textarea>
+                  <button
+                    disabled={isUserLimited}
+                    onClick={async () => {
+                      append({ content: `` + input, role: "user" });
+                      setInput("");
+                      setCount(count - 1);
+                      console.log("intentos restantes: ", count);
+                    }}
+                  >
+                    Enviar
+                  </button>
+                </div>
+              </div>
+
+              <div className="status-bar">
+                <p className="status-bar-field">Intentos restantes: {count}</p>
+                <p className="status-bar-field">COM</p>
+                <p className="status-bar-field">Uso de la NPU: NaN%</p>
               </div>
             </div>
           </div>
