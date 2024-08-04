@@ -11,6 +11,7 @@ import CreditsWindow from "../components/CreditsWindow.tsx";
 import HelpmeWindow from "../components/HelpmeWindow.tsx";
 import HelpInstructionsWindow from "../components/HelpInstructionsWindow.tsx";
 import ChatPromptWindow from "../components/ChatPromptWindow.tsx";
+import SettingsWindow from "../components/SettingsWindow.tsx";
 
 // Wrappers
 import ShaderWrapper from "../components/ShaderWrapper.jsx";
@@ -26,6 +27,7 @@ import LoudSketchWrapper from "../components/sketches/LoudSketchWrapper.tsx";
 import CardiodSketchWrapper from "../components/sketches/CardiodSketchWrapper.tsx";
 import WordCloudSketchWrapper from "../components/sketches/WordCloudSketchWrapper.tsx";
 import WordSaladSketchWrapper from "../components/sketches/WordSaladSketchWrapper.tsx";
+import MathTextbookSketchWrapper from "../components/sketches/MathTexbookSketchWrapper.tsx";
 
 import GlitchedBg from "../assets/glitchedBackground.gif";
 
@@ -81,6 +83,13 @@ export default function Desktop() {
   const [isChatPromptOpened, setIsChatPromptOpened] = React.useState(false);
   const chatPromptVisibility = { isChatPromptOpened, setIsChatPromptOpened };
 
+  const [isSettingsWindowOpened, setIsSettingsWindowOpened] =
+    React.useState(false);
+  const SettingsWindowVisibility = {
+    isSettingsWindowOpened,
+    setIsSettingsWindowOpened,
+  };
+
   return (
     <>
       <div className="crt"></div>
@@ -91,6 +100,7 @@ export default function Desktop() {
           {/* Windows Container */}
           <div className="flex justify-center">
             <div className="relative" id="desktop-container">
+              {/* This is the welcoming window */}
               {isWindow1Visible ? (
                 <WelcomePromptWindow
                   window1Visibility={window1Visibility}
@@ -113,7 +123,18 @@ export default function Desktop() {
                 />
               ) : null}
 
-              {isChatPromptOpened ? <ChatPromptWindow /> : null}
+              {isChatPromptOpened ? (
+                <ChatPromptWindow
+                  SettingsWindowVisibility={SettingsWindowVisibility}
+                />
+              ) : null}
+
+              {isSettingsWindowOpened ? (
+                <SettingsWindow
+                  SettingsWindowVisibility={SettingsWindowVisibility}
+                  shaderVisibility={shaderVisibility}
+                />
+              ) : null}
             </div>
 
             <div className="relative"></div>
@@ -143,7 +164,7 @@ export default function Desktop() {
 
           {/* Background Shader Container */}
           <div className="relative -z-50" id="shadderContainer">
-            {isShaderVisible ? <ShaderWrapper /> : null}
+            <ShaderWrapper shaderVisibility={shaderVisibility} />
           </div>
 
           {/* Glitch at bottom container */}
