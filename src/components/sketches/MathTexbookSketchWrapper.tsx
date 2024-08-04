@@ -88,6 +88,8 @@ function MathTextbookSketchWrapper() {
                 <br />
                 <br />
                 <p>Puedes irte.</p>
+                <br />
+                <button onClick={() => location.reload()}>Salir</button>
               </div>
             </div>
           </div>
