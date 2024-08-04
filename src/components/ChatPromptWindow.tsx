@@ -49,7 +49,6 @@ function ChatPromptWindow({ SettingsWindowVisibility }) {
         const randomIndex = Math.floor(Math.random() * availableNumbers.length);
         const chosenNumber = availableNumbers[randomIndex];
         setChosenNumbers([...chosenNumbers, chosenNumber]);
-        console.log("Chosen number:", chosenNumber);
         handleComponentVisibility(chosenNumber);
       } else {
         // Reset chosenNumbers if all numbers have been chosen
@@ -66,76 +65,52 @@ function ChatPromptWindow({ SettingsWindowVisibility }) {
   function handleComponentVisibility(chosenNumber) {
     switch (chosenNumber) {
       case 1:
-        // Logic for chosenNumber = 1
-        console.log("Handling visibility for number 1");
         setVisibleSketch(1);
         break;
 
       case 2:
-        // Logic for chosenNumber = 2
-        console.log("Handling visibility for number 2");
         setVisibleSketch(2);
         break;
 
       case 3:
-        // Logic for chosenNumber = 3
-        console.log("Handling visibility for number 3");
         setVisibleSketch(3);
         break;
 
       case 4:
-        // Logic for chosenNumber = 4
-        console.log("Handling visibility for number 4");
         setVisibleSketch(4);
         break;
 
       case 5:
-        // Logic for chosenNumber = 5
-        console.log("Handling visibility for number 5");
         setVisibleSketch(5);
         break;
 
       case 6:
-        // Logic for chosenNumber = 6
-        console.log("Handling visibility for number 6");
         setVisibleSketch(6);
         break;
 
       case 7:
-        // Logic for chosenNumber = 7
-        console.log("Handling visibility for number 7");
         setVisibleSketch(7);
 
         break;
 
       case 8:
-        // Logic for chosenNumber = 3
-        console.log("Handling visibility for number 8");
         setVisibleSketch(8);
         break;
 
       case 9:
-        // Logic for chosenNumber = 3
-        console.log("Handling visibility for number 9");
         setVisibleSketch(9);
         break;
 
       case 10:
-        // Logic for chosenNumber = 3
-        console.log("Handling visibility for number 10");
         setVisibleSketch(10);
         break;
 
       case 11:
-        // Logic for chosenNumber = 3
-        console.log("Handling visibility for number 11");
         setVisibleSketch(11);
 
         break;
 
       case 12:
-        // Logic for chosenNumber = 12
-        console.log("Handling visibility for number 12");
         setVisibleSketch(12);
         break;
 
@@ -230,7 +205,6 @@ function ChatPromptWindow({ SettingsWindowVisibility }) {
                       append({ content: `` + input, role: "user" });
                       setInput("");
                       setCount(count - 1);
-                      console.log("intentos restantes: ", count);
                     }}
                   >
                     Enviar
