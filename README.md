@@ -33,3 +33,7 @@ Se necesita una API Key de Google que puede ser generada gratis desde [Google AI
 ```sh
 npx astro dev
 ```
+
+### Sobre el proyecto
+
+Esta aplicación web puede considerarse una aventura interactiva donde el usuario tiene como objetivo conocer a una de las últimas inteligencias artificiales que aún siguen conectadas a la red, pero que han perdido el rumbo por completo, por lo que su tarea en negociar con ella y hacerla entrar en razón, aunque no sea sencillo.
