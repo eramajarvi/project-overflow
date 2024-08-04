@@ -139,6 +139,126 @@ function CreditsWindow({ creditsWindowVisibility }) {
                   </li>
                 </ul>
               </details>
+
+              <details>
+                <summary>
+                  <strong>sketches de p5 utilizados</strong>
+                </summary>
+                <ul>
+                  <li>
+                    <a
+                      href="https://openprocessing.org/sketch/2224141/"
+                      target="_blank"
+                    >
+                      Breath Sketch
+                    </a>{" "}
+                  </li>
+                  <li>
+                    <a
+                      href="https://openprocessing.org/sketch/445311"
+                      target="_blank"
+                    >
+                      Cardiod Sketch
+                    </a>{" "}
+                  </li>
+                  <li>
+                    <a
+                      href="https://openprocessing.org/sketch/2187608"
+                      target="_blank"
+                    >
+                      Cilinder Sketch
+                    </a>{" "}
+                  </li>
+                  <li>
+                    <a
+                      href="https://openprocessing.org/sketch/2215521/"
+                      target="_blank"
+                    >
+                      Letters from My Mother Sketch
+                    </a>{" "}
+                  </li>
+                  <li>
+                    <a
+                      href="https://openprocessing.org/sketch/1297329"
+                      target="_blank"
+                    >
+                      Loud Sketch
+                    </a>{" "}
+                  </li>
+                  <li>
+                    <a
+                      href="https://openprocessing.org/sketch/1803918"
+                      target="_blank"
+                    >
+                      Malagua Sketch
+                    </a>{" "}
+                  </li>
+                  <li>
+                    <a
+                      href="https://openprocessing.org/sketch/1820759"
+                      target="_blank"
+                    >
+                      90s Math Texbook Sketch
+                    </a>{" "}
+                  </li>
+                  <li>
+                    <a
+                      href="https://openprocessing.org/sketch/2084721"
+                      target="_blank"
+                    >
+                      Pink Sketch
+                    </a>{" "}
+                  </li>
+                  <li>
+                    <a
+                      href="https://openprocessing.org/sketch/1803325"
+                      target="_blank"
+                    >
+                      SpyderWeb Sketch
+                    </a>{" "}
+                  </li>
+                  <li>
+                    <a
+                      href="https://openprocessing.org/sketch/2225715/"
+                      target="_blank"
+                    >
+                      Word Cloud Sketch
+                    </a>{" "}
+                  </li>
+                  <li>
+                    <a
+                      href="https://openprocessing.org/sketch/1925074"
+                      target="_blank"
+                    >
+                      Word Salad Sketch
+                    </a>{" "}
+                  </li>
+                  <li>
+                    <a
+                      href="https://openprocessing.org/sketch/1798634"
+                      target="_blank"
+                    >
+                      Xubitos Sketch
+                    </a>{" "}
+                  </li>
+                  <li>
+                    <a
+                      href="https://openprocessing.org/sketch/2087724"
+                      target="_blank"
+                    >
+                      Yarn Sketch
+                    </a>{" "}
+                  </li>
+                  <li>
+                    <a
+                      href="https://openprocessing.org/user/293890"
+                      target="_blank"
+                    >
+                      Shaders de fondo usados - por Samuel YAN
+                    </a>{" "}
+                  </li>
+                </ul>
+              </details>
             </ul>
           </div>
         </div>
