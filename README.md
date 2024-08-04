@@ -28,7 +28,7 @@ Y̶͇̘̹̪͕̤̺̌̀2̴̧̹̤͉̻̞͙̘̘̟̘̟̗̻̮̥̜̈́̃̂̅̓̍̈́͂̓̕͠
 
 ### Acerca de la configuración para ejecutar en local
 
-Se necesita una API Key de Google que puede ser generada gratis desde [Google AI Studio.](https://aistudio.google.com/app/apikey)
+Se necesita una API Key de Google que puede ser generada gratis desde [Google AI Studio.](https://aistudio.google.com/app/apikey) Luego crea el archivo .env y guarda el API Key como GOOGLE_GENERATIVE_AI_API_KEY="..."
 
 ```sh
 npx astro dev

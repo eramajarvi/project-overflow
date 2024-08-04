@@ -12,7 +12,7 @@ const google = createGoogleGenerativeAI({
 export const POST: APIRoute = async ({ request }) => {
   const { messages }: { messages: CoreMessage[] } = await request.json();
 
-  const model = google("models/gemini-1.5-flash", {
+  const model = google("models/gemini-1.5-flash-latest", {
     safetySettings: [
       { category: "HARM_CATEGORY_HARASSMENT", threshold: "BLOCK_NONE" },
     ],
