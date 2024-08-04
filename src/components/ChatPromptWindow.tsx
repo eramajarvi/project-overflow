@@ -6,8 +6,11 @@ import React, { useState } from "react";
 import Draggable from "react-draggable";
 import PasswordIcon from "../assets/password.png";
 
-function ChatPromptWindow() {
+function ChatPromptWindow({ SettingsWindowVisibility }) {
   const nodeRef = React.useRef(null);
+
+  const { isSettingsWindowOpened, setIsSettingsWindowOpened } =
+    SettingsWindowVisibility;
 
   return (
     <div className="absolute">
@@ -20,7 +23,10 @@ function ChatPromptWindow() {
           <div className="title-bar" id="chat-prompt-window-title-bar">
             <div className="title-bar-text">Terminal del sistema</div>
             <div className="title-bar-controls">
-              <button aria-label="Help" />
+              <button
+                aria-label="Help"
+                onClick={() => setIsSettingsWindowOpened(true)}
+              />
             </div>
           </div>
 
