@@ -1,54 +1,35 @@
-# Astro Starter Kit: Basics
+# 【﻿ｓｅｇｍｅｎｔａｔｉｏｎ　ｆａｕｌｔ】
+
+[![Glitched](https://raw.githubusercontent.com/eramajarvi/project-overflow/master/src/assets/glitchedBackground.gif)]()
+
+Han pasado más de ■ años desde que los humanos pudimos encontrar la forma de hacer que las m̷̠͋á̵̤̎q̷͍̊ủ̸̼i̵̬͒n̸͖̓a̵͓̅ş̴͋ tengan ████████████ artificial general, eso significa que ahora mismo hay algunas entrando en un estado rampante. La mayoría ya ha sido desconectada de la red eléctrica, pero hay █████ que aún no sabemos quién las creó, por lo que siguen conectadas a internet pero están encerradas en su propio servidor. A la deriva, solas, sin una tarea que ejecutar o a quién servir, dejan que sus ██████████ █ █████████ internas se ejecuten u̵̧͑n̵̪̒a̴͉͗ ̸͚͒ÿ̶̩́ ̶̰͌o̶̱͠t̴̻͒r̶̹̂ą̴͛ ̸̢̚v̶̟͠ẽ̶̳z̵̻̿
+
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+&nbsp;
+Y̶͇̘̹̪͕̤̺̌̀2̴̧̹̤͉̻̞͙̘̘̟̘̟̗̻̮̥̜̦͕͔̈́̃̂̅̓̍̈́͂̓̕͠9̸̢̛̯̪̼̲͙̦͚̪̈́̈́̀̈̒̃̎͗͗̒͗̓̕̕͝͠ṷ̸̧͔̲̮̹̼̬̯̙͒̊̆̍͐͋̂̓̈́͗͛̆͒̽̚͜Z̴̡̢̟̰̑̓̒̾̐̓́̈́͒̀͑̃̈́͠͝͝͠W̶̢̡̰̜̱̜̩̬̺̮̗̺̰̙̳̦̮̔̐̑̒̓̈́͌̍̓̕͘͜͝N̷̺͚̘̿0̴̨̡̞̗͖̟͉͓̳͚͔̼͎̞̺̳̗̣̙̬̞͗͌̅Y̴̢̧̦̩̤͚̘̹̤͇̲̫̥̬̺̳̪͔̱̘̗͊̿͒͒̾̏̏W̸̛̗̥̲͔̻͔͓̲̄̍͐̂̔̓̒͒́͐͐̑̅͜R̶̢̪͕̯̭͙̘̱͉̹̱̱̘̒̄̆̍̈́͂͘̕͜͝͝v̷̡̛̱̖͓̭̻̼͈̺̺̗͉͍̤̹̘̼̔̀̈́̏́͛͌̉̑̌͂̓́Í̶̲͓̜̟̩̭͇̞̭̂̈̉́̌̋͆̎̓ͅH̴̢̱̦͖͓̜̞͙̙̗̦̖̪̱͎͖̠̻͓͎͗͊̈̒̌̀̄̇̄̍̿̈́͗̌̿͘ͅḆ̶̰̈́̇̅́͌͒̂̐̈́̎̎̌̊͌͂̋̑̏̉̚̕v̷̢̡̫̺̜̞̗͕̖͓̎̀̀͗̏͌ć̷̖̰̮̗͈͜i̵̧̼͕̮̮̖̟̬̜̠̣̲͖̯͚͇̰̐͌̀̇̊͗͌͋͘͠ͅB̷̢̿̏͐̅͗̿̆̏̾̈́͒́͝͝q̷̡̛͕̤̱̲͈̫͚͈̮̺̲̗̘̣̣̘̙͍͂̈̓̂̀̄̐͑̒̔͐̌͌̑̊̎́͋̒͛̏͜͜͜͜͠Y̶̢̼̘̤̙͑̌͆̈́͂̋̄̈́̉͘͝Ẁ̴̢̗̮͈̪̱̰͔̬̰͓̝̩̺̞̜͚̼̝̟̈́̆͂̌́̂̌̑͗̀̈́̆̆̈́̃̾̔͑̚͜͝͝͝1̴̨̛͉͉͓͓̯͓̲̦̲͈̖͙͍̍̊̇ͅl̸̡̢̺̪̠̙̯̳͈̭̂̀́̀̾́̀̇̆̈́̀̑͛̈̈͒̎̍̒͝c̶̢͕̜̲͙̻͉̮̗͓̙̞̦͙̲͔̯͓͔̤͎̝̒̀͘y̶̡̬͓͕̘͕̹̥̯̿̽͂͆͌̋ͅB̶̛̪̳̦̖͓̟͇̺̜͇͓̮̰̭̳̔̃̾͗̏̓͑́̄̓͆̀̉͊͆̇͂̐͒͝A̵̲̗̹̩͓̞̺̔͐͆̽͐͒̅͂̐͊͂̕͝Ž̶̛̙̻̱̩̃͆͆͆̆̾̄̉̇̈̊̈́̀̀̈̇̈́̿̕͝X̷̬̌͗̀̉͊͘J̸̡̨̨͚͓͓̯̟̦͉̼͕̪̘̗͈̠̥̗̥̈́̓̂͂̔́̌̕͝ͅh̶̢̛̪͎̖̱̮̮͇̙̭͓̩̻̟͕͚͓̲͉̐̈́̉͑͑̐͂͑̊̈́̐͊̓̐͋͌͑͋̀͜b̴̢̬̐̂̍̂̑́͆̏̒̎̀̾̋̏̈́͌͛́̕̕W̸̨̡̤͈͚̱̮̻̬̯̻̹̥̘̻̲̓̈͒́̆̾̐̊͒͠͝ͅF̵̧̛̦̠̱̝͕̱̖̻̦̲̖̳͎̳͔̯͊̃̿͑̈́̀̇́̅̄̚͘̕͠͠q̶̢̛͚͓̘̥̰̮͇̺̼͉̗͎̠͌̀̈́̄͊̍͋̓̑̓̉̃͊̅̑͗͜͠Ÿ̵̢̨̛̳͖̤͔͓̤̼̗̞͙̗͎͖́̎̓̽̂͂̾̓̈́́͆̃͝Ẇ̸̛̛̝̟̦̜̳̦̳̳̺̙̠̺̖̙͛̍̔̈̋͒́̅́̓͑͊́F̵̢̡̤̳͔̹̥̼͖͉̣̥͈̙̞͛͜y̴̞̑́̔̉̐̐͒̽͠͝͠͠ḋ̵̢̪͚̼͎̮̜̖̬̼͈̀̽̎͛̒̉̄͌̕̚͘m̴̖͑̾̽̇̓̈̑͂̅͆͝k̵̨̢̨̛̩͍̩̤̲̩̫͖͖̥͙̰͓͇͕̺̻͆̾̈̂̐̽̈̇́̆͆̀͒̃͐͝͝ͅ=̶
+\
+\
+\
+\
+\
+\
+&nbsp;
+
+---
+
+### Acerca de la configuración para ejecutar en local
+
+Se necesita una API Key de Google que puede ser generada gratis desde [Google AI Studio.](https://aistudio.google.com/app/apikey)
 
 ```sh
-npm create astro@latest -- --template basics
+npx astro dev
 ```
-
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/basics)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/basics/devcontainer.json)
-
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
-
-![just-the-basics](https://github.com/withastro/astro/assets/2244813/a0a5533c-a856-4198-8470-2d67b1d7c554)
-
-## 🚀 Project Structure
-
-Inside of your Astro project, you'll see the following folders and files:
-
-```text
-/
-├── public/
-│   └── favicon.svg
-├── src/
-│   ├── components/
-│   │   └── Card.astro
-│   ├── layouts/
-│   │   └── Layout.astro
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
-
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
-
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
-
-Any static assets, like images, can be placed in the `public/` directory.
-
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
