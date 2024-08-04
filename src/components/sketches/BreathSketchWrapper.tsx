@@ -2,22 +2,23 @@
 import "98.css";
 import "../../styles/global.css";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Draggable from "react-draggable";
 
 import BreathSketch from "./BreathSketch";
+import { range, sample } from "../../helpers/range";
 
 function BreathSketchWrapper() {
-  const nodeRef = React.useRef(null);
+  const BreathNodeRef = React.useRef(null);
 
   return (
     <div className="absolute">
       <Draggable
         handle="#breath-window-title-bar"
-        nodeRef={nodeRef}
-        positionOffset={{ x: "0%", y: "0%" }}
+        nodeRef={BreathNodeRef}
+        positionOffset={{ x: "600px", y: "-250px" }}
       >
-        <div ref={nodeRef} className="window" style={{ width: "300px" }}>
+        <div ref={BreathNodeRef} className="window" style={{ width: "450px" }}>
           <div
             className="title-bar full-title-bar"
             id="breath-window-title-bar"

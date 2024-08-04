@@ -6,18 +6,19 @@ import React, { useState } from "react";
 import Draggable from "react-draggable";
 
 import YarnSketch from "./YarnSketch";
+import { range, sample } from "../../helpers/range";
 
 function YarnSketchWrapper() {
-  const nodeRef = React.useRef(null);
+  const YarnNodeRef = React.useRef(null);
 
   return (
     <div className="absolute">
       <Draggable
         handle="#yarn-window-title-bar"
-        nodeRef={nodeRef}
-        positionOffset={{ x: "0%", y: "0%" }}
+        nodeRef={YarnNodeRef}
+        positionOffset={{ x: "800px", y: "-350px" }}
       >
-        <div ref={nodeRef} className="window" style={{ width: "400px" }}>
+        <div ref={YarnNodeRef} className="window" style={{ width: "600px" }}>
           <div className="title-bar full-title-bar" id="yarn-window-title-bar">
             <div className="title-bar-text">x^2 + y^2 + z^2 = 1</div>
           </div>

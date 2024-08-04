@@ -6,18 +6,19 @@ import React, { useState } from "react";
 import Draggable from "react-draggable";
 
 import PinkSketch from "./PinkSketch";
+import { range, sample } from "../../helpers/range";
 
 function PinkSketchWrapper() {
-  const nodeRef = React.useRef(null);
+  const PinkNodeRef = React.useRef(null);
 
   return (
     <div className="absolute">
       <Draggable
         handle="#pink-window-title-bar"
-        nodeRef={nodeRef}
-        positionOffset={{ x: "0%", y: "0%" }}
+        nodeRef={PinkNodeRef}
+        positionOffset={{ x: "500px", y: "-100px" }}
       >
-        <div ref={nodeRef} className="window" style={{ width: "300px" }}>
+        <div ref={PinkNodeRef} className="window" style={{ width: "400px" }}>
           <div className="title-bar full-title-bar" id="pink-window-title-bar">
             <div className="title-bar-text">B2 C3 D4 E5 F6 G7 H8 I9 J10</div>
           </div>

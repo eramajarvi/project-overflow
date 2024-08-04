@@ -6,18 +6,19 @@ import React, { useState } from "react";
 import Draggable from "react-draggable";
 
 import XubitosSketch from "./XubitosSketch";
+import { range, sample } from "../../helpers/range";
 
 function XubitosSketchWrapper() {
-  const nodeRef = React.useRef(null);
+  const XubitosNodeRef = React.useRef(null);
 
   return (
     <div className="absolute">
       <Draggable
         handle="#xubitos-window-title-bar"
-        nodeRef={nodeRef}
-        positionOffset={{ x: "0%", y: "0%" }}
+        nodeRef={XubitosNodeRef}
+        positionOffset={{ x: "700px", y: "-250px" }}
       >
-        <div ref={nodeRef} className="window" style={{ width: "350px" }}>
+        <div ref={XubitosNodeRef} className="window" style={{ width: "450px" }}>
           <div
             className="title-bar full-title-bar"
             id="xubitos-window-title-bar"

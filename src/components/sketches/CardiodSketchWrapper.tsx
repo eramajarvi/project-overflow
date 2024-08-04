@@ -6,18 +6,19 @@ import React, { useState } from "react";
 import Draggable from "react-draggable";
 
 import CardiodSketch from "./CardiodSketch";
+import { range, sample } from "../../helpers/range";
 
 function CardiodSketchWrapper() {
-  const nodeRef = React.useRef(null);
+  const CardiodNodeRef = React.useRef(null);
 
   return (
     <div className="absolute">
       <Draggable
         handle="#cardiod-window-title-bar"
-        nodeRef={nodeRef}
-        positionOffset={{ x: "0%", y: "0%" }}
+        nodeRef={CardiodNodeRef}
+        positionOffset={{ x: "850px", y: "-350px" }}
       >
-        <div ref={nodeRef} className="window" style={{ width: "350px" }}>
+        <div ref={CardiodNodeRef} className="window" style={{ width: "600px" }}>
           <div
             className="title-bar full-title-bar"
             id="cardiod-window-title-bar"

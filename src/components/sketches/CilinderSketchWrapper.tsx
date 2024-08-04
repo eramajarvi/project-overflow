@@ -6,18 +6,23 @@ import React, { useState } from "react";
 import Draggable from "react-draggable";
 
 import CilinderSketch from "./CilinderSketch";
+import { range, sample } from "../../helpers/range";
 
 function CilinderSketchWrapper() {
-  const nodeRef = React.useRef(null);
+  const CilinderNodeRef = React.useRef(null);
 
   return (
     <div className="absolute">
       <Draggable
         handle="#cilinder-window-title-bar"
-        nodeRef={nodeRef}
-        positionOffset={{ x: "0%", y: "0%" }}
+        nodeRef={CilinderNodeRef}
+        positionOffset={{ x: "300px", y: "-250px" }}
       >
-        <div ref={nodeRef} className="window" style={{ width: "400px" }}>
+        <div
+          ref={CilinderNodeRef}
+          className="window"
+          style={{ width: "600px" }}
+        >
           <div
             className="title-bar full-title-bar"
             id="cilinder-window-title-bar"

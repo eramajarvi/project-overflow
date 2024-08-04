@@ -6,20 +6,23 @@ import React, { useState } from "react";
 import Draggable from "react-draggable";
 
 import LoudSketch from "./LoudSketch";
+import { range, sample } from "../../helpers/range";
 
 function LoudSketchWrapper() {
-  const nodeRef = React.useRef(null);
+  const LoudNodeRef = React.useRef(null);
 
   return (
     <div className="absolute">
       <Draggable
         handle="#loud-window-title-bar"
-        nodeRef={nodeRef}
-        positionOffset={{ x: "0%", y: "0%" }}
+        nodeRef={LoudNodeRef}
+        positionOffset={{ x: "600px", y: "-250px" }}
       >
-        <div ref={nodeRef} className="window" style={{ width: "300px" }}>
+        <div ref={LoudNodeRef} className="window" style={{ width: "500px" }}>
           <div className="title-bar full-title-bar" id="loud-window-title-bar">
-            <div className="title-bar-text">B2 C3 D4 E5 F6 G7 H8 I9 J10</div>
+            <div className="title-bar-text">
+              Continúa hablando... te escucho
+            </div>
           </div>
 
           <div className="window-body flex full-window-body" id="LoudWindow">

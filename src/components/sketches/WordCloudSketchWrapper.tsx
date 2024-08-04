@@ -6,18 +6,23 @@ import React, { useState } from "react";
 import Draggable from "react-draggable";
 
 import WordCloudSketch from "./WordCloudSketch";
+import { range, sample } from "../../helpers/range";
 
 function WordCloudSketchWrapper() {
-  const nodeRef = React.useRef(null);
+  const WordCloudNodeRef = React.useRef(null);
 
   return (
     <div className="absolute">
       <Draggable
         handle="#word-cloud-window-title-bar"
-        nodeRef={nodeRef}
-        positionOffset={{ x: "0%", y: "0%" }}
+        nodeRef={WordCloudNodeRef}
+        positionOffset={{ x: "100px", y: "-250px" }}
       >
-        <div ref={nodeRef} className="window" style={{ width: "400px" }}>
+        <div
+          ref={WordCloudNodeRef}
+          className="window"
+          style={{ width: "600px" }}
+        >
           <div
             className="title-bar full-title-bar"
             id="word-cloud-window-title-bar"

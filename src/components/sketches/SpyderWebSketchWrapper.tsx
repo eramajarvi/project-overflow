@@ -6,6 +6,7 @@ import React, { useState } from "react";
 import Draggable from "react-draggable";
 
 import SpyderWebSketch from "./SpyderWebSketch";
+import { range, sample } from "../../helpers/range";
 
 function SpyderWebSketchWrapper() {
   const nodeRef = React.useRef(null);
@@ -15,9 +16,9 @@ function SpyderWebSketchWrapper() {
       <Draggable
         handle="#spyder-web-window-title-bar"
         nodeRef={nodeRef}
-        positionOffset={{ x: "0%", y: "0%" }}
+        positionOffset={{ x: "500px", y: "-250px" }}
       >
-        <div ref={nodeRef} className="window" style={{ width: "350px" }}>
+        <div ref={nodeRef} className="window" style={{ width: "550px" }}>
           <div
             className="title-bar full-title-bar"
             id="spyder-web-window-title-bar"

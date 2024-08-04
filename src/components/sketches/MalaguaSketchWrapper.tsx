@@ -6,23 +6,28 @@ import React, { useState } from "react";
 import Draggable from "react-draggable";
 
 import MalaguaSketch from "./MalaguaSketch";
+import { range, sample } from "../../helpers/range";
 
 function MalaguaSketchWrapper() {
-  const nodeRef = React.useRef(null);
+  const MalaguaNodeRef = React.useRef(null);
 
   return (
     <div className="absolute">
       <Draggable
         handle="#malagua-window-title-bar"
-        nodeRef={nodeRef}
-        positionOffset={{ x: "0%", y: "0%" }}
+        nodeRef={MalaguaNodeRef}
+        positionOffset={{ x: "400px", y: "-150px" }}
       >
-        <div ref={nodeRef} className="window" style={{ width: "300px" }}>
+        <div ref={MalaguaNodeRef} className="window" style={{ width: "400px" }}>
           <div
             className="title-bar full-title-bar"
             id="malagua-window-title-bar"
           >
             <div className="title-bar-text">M̸͚͍̉̆́͑̃͆̾̐͆͒͊̍͝a̷̗̐̅́͑̊̒͝l̵͚̲̠̈́̓͛̓͌͑́̾͗̆a̵̩͇̹̬͋͂ḡ̶̫̤̠̫̯̜͉̓͊̈́̄̒̇̄̍̽̍̆͋̚ū̴͇͚̠̻̣̪̞̺̬̌͂͑͛̒̿͒̂́͐a̴̢̪̝̮̠͍̰̬͛̂</div>
+
+            <div className="title-bar-controls">
+              <button aria-label="Close" />
+            </div>
           </div>
 
           <div className="window-body flex full-window-body" id="MalaguaWindow">

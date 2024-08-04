@@ -6,18 +6,23 @@ import React, { useState } from "react";
 import Draggable from "react-draggable";
 
 import WordSaladSketch from "./WordSaladSketch";
+import { range, sample } from "../../helpers/range";
 
 function WordSaladSketchWrapper() {
-  const nodeRef = React.useRef(null);
+  const WordSaladNodeRef = React.useRef(null);
 
   return (
     <div className="absolute">
       <Draggable
         handle="#word-salad-window-title-bar"
-        nodeRef={nodeRef}
-        positionOffset={{ x: "0%", y: "0%" }}
+        nodeRef={WordSaladNodeRef}
+        positionOffset={{ x: "600px", y: "-250px" }}
       >
-        <div ref={nodeRef} className="window" style={{ width: "600px" }}>
+        <div
+          ref={WordSaladNodeRef}
+          className="window"
+          style={{ width: "600px" }}
+        >
           <div
             className="title-bar full-title-bar"
             id="word-salad-window-title-bar"
