@@ -22,6 +22,9 @@ function MathTextbookSketchWrapper() {
             <div className="title-bar-text">
               Conectando a través del puente de Einstein-Rosen...
             </div>
+            <div className="title-bar-controls">
+              <button aria-label="Close" onClick={() => location.reload()} />
+            </div>
           </div>
 
           <div

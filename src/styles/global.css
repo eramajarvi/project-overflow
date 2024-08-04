@@ -202,7 +202,7 @@ button {
     -moz-transform: translateY(100%);
   }
   to {
-    -moz-transform: translateY(-300%);
+    -moz-transform: translateY(-100%);
   }
 }
 
@@ -212,7 +212,7 @@ button {
     -webkit-transform: translateY(100%);
   }
   to {
-    -webkit-transform: translateY(-300%);
+    -webkit-transform: translateY(-100%);
   }
 }
 

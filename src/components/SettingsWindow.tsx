@@ -44,7 +44,7 @@ function SettingsWindow({ SettingsWindowVisibility, shaderVisibility }) {
                 <p>
                   Habla con la IA usando la dialéctica para que le ayudes a
                   recapacitar, antes de que ella misma de libere y se conecte al
-                  exterior. Tienes 10 intentos en total.
+                  exterior. Tienes 12 intentos en total.
                 </p>
               </div>
             </div>
