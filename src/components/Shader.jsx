@@ -14,8 +14,6 @@ await useShaders();
 // Construyte el sketch de p5
 let theShader;
 
-mountFlex(p5);
-
 class Sketch extends React.Component {
   constructor(props) {
     super(props);
@@ -33,6 +31,8 @@ class Sketch extends React.Component {
 
     // Native p5 functions work as they would normally but prefixed with
     // a p5 object "p"
+    mountFlex(p5);
+
     p.setup = () => {
       //Everyhting that normally happens in setup works
 

@@ -1,18 +1,15 @@
 import React from "react";
-
-import { useStore } from "@nanostores/react";
-import { isLoggedin } from "../store.js";
-
 import Shader from "./Shader.jsx";
 
-function ShaderWrapper() {
+function ShaderWrapper({ shaderVisibility }) {
+  const { isShaderVisible, setIsShaderVisible } = shaderVisibility;
 
-  return(
+  return isShaderVisible ? (
     <div>
       {/* This wrapper is needed to contain the shader in a component */}
       <Shader />
     </div>
-  );
-} 
+  ) : null;
+}
 
 export default ShaderWrapper;

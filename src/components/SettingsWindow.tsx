@@ -14,6 +14,11 @@ function SettingsWindow({ SettingsWindowVisibility, shaderVisibility }) {
 
   const { isShaderVisible, setIsShaderVisible } = shaderVisibility;
 
+  function ShaderHandler() {
+    console.log("El estado actual del shader es:", isShaderVisible);
+    isShaderVisible ? setIsShaderVisible(true) : setIsShaderVisible(false);
+  }
+
   return (
     <div className="absolute">
       <Draggable
@@ -39,12 +44,23 @@ function SettingsWindow({ SettingsWindowVisibility, shaderVisibility }) {
               <fieldset className="fieldset-fix">
                 <legend>Fondo animado</legend>
                 <div className="field-row">
-                  <input id="radio13" type="radio" name="fieldset-example2" />
+                  <input
+                    id="radio13"
+                    type="radio"
+                    name="fieldset-example2"
+                    checked
+                    disabled
+                  />
                   <label htmlFor="radio13">Activado</label>
                 </div>
 
                 <div className="field-row">
-                  <input id="radio14" type="radio" name="fieldset-example2" />
+                  <input
+                    id="radio14"
+                    type="radio"
+                    name="fieldset-example2"
+                    disabled
+                  />
                   <label htmlFor="radio14">Desactivado</label>
                 </div>
               </fieldset>
