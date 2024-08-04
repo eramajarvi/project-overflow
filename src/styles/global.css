@@ -141,15 +141,11 @@ button {
 }
 
 .title-bar-controls button[aria-label="Help"] {
-  background-image: svg-load("./icon/help.svg");
-  background-repeat: no-repeat;
   background-position: top 3px left 5px;
 }
 
 .title-bar-controls button[aria-label="Close"] {
   margin-left: 2px;
-  background-image: svg-load("./icon/close.svg");
-  background-repeat: no-repeat;
   background-position: top 4px left 4.5px;
 }
 
@@ -165,6 +161,18 @@ button {
   font-family: "Tahoma", Arial;
   font-size: 14px;
   resize: none;
+}
+
+.fieldset-fix {
+  border: 3px solid transparent;
+  border-image: url("/assets/groupbox-border.svg") 2;
+  padding: 10px;
+  padding-block-start: 8px;
+  margin: 0;
+}
+
+.fieldset-fix .field-row label {
+  cursor: url("/assets/cursor-pointer.ico"), pointer !important;
 }
 
 @keyframes flicker {
