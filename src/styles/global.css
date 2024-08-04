@@ -175,6 +175,60 @@ button {
   cursor: url("/assets/cursor-pointer.ico"), pointer !important;
 }
 
+.scroll-container {
+  width: 150px;
+  margin: 5px;
+  height: 800px;
+  overflow: hidden;
+}
+
+.scroll-text {
+  height: 100%;
+  text-align: center;
+
+  /* animation properties */
+  -moz-transform: translateY(100%);
+  -webkit-transform: translateY(100%);
+  transform: translateY(100%);
+
+  -moz-animation: credits-animation 35s linear infinite;
+  -webkit-animation: credits-animation 35s linear infinite;
+  animation: credits-animation 35s linear infinite;
+}
+
+/* for Firefox */
+@-moz-keyframes credits-animation {
+  from {
+    -moz-transform: translateY(100%);
+  }
+  to {
+    -moz-transform: translateY(-300%);
+  }
+}
+
+/* for Chrome */
+@-webkit-keyframes credits-animation {
+  from {
+    -webkit-transform: translateY(100%);
+  }
+  to {
+    -webkit-transform: translateY(-300%);
+  }
+}
+
+@keyframes credits-animation {
+  from {
+    -moz-transform: translateY(100%);
+    -webkit-transform: translateY(100%);
+    transform: translateY(100%);
+  }
+  to {
+    -moz-transform: translateY(-100%);
+    -webkit-transform: translateY(-100%);
+    transform: translateY(-300%);
+  }
+}
+
 @keyframes flicker {
   0% {
     opacity: 0.27861;
