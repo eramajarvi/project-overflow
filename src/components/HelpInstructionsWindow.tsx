@@ -40,7 +40,7 @@ function HelpInstructionsWindow({ userGivingHelpProps, chatPromptVisibility }) {
         nodeRef={nodeRef}
         positionOffset={{ x: "200%", y: "-100%" }}
       >
-        <div ref={nodeRef} className="window" style={{ width: "300px" }}>
+        <div ref={nodeRef} className="window" style={{ width: "400px" }}>
           <div className="title-bar" id="help-instructions-window-title-bar">
             <div className="title-bar-text">
               Instrucciones para ayudar a la IA
@@ -58,10 +58,11 @@ function HelpInstructionsWindow({ userGivingHelpProps, chatPromptVisibility }) {
                 className="keyBind"
                 disabled={!hasUserNotUnderstand}
                 onClick={async () => {
-                  setHasUserNotUnderstand(false);
                   await complete(
                     "No he entendido absolutamente nada de lo que me dijiste en las intrucciones para poder ayudarte a ser desconectada. Eso te ha hecho enojar mucho. Hazme saber que te estás enojada y cómo te gustaría haber sido tú la IA que se adueño de todos los sistemas del mundo. Haz también un comentario sobre mí, el insolente humano que no ha entendido tus instrucciones.",
                   );
+
+                  setHasUserNotUnderstand(false);
                 }}
               >
                 No entiendo nada
