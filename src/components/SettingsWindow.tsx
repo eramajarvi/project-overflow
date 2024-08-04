@@ -43,7 +43,8 @@ function SettingsWindow({ SettingsWindowVisibility, shaderVisibility }) {
                 <img src={HelpIcon.src} className="pixelated mr-2 w-10 h-10" />
                 <p>
                   Habla con la IA usando la dialéctica para que le ayudes a
-                  recapacitar. Tienes 10 intentos en total.
+                  recapacitar, antes de que ella misma de libere y se conecte al
+                  exterior. Tienes 10 intentos en total.
                 </p>
               </div>
             </div>
