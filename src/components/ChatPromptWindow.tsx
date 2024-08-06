@@ -41,7 +41,7 @@ function ChatPromptWindow({ SettingsWindowVisibility }) {
 
   useEffect(() => {
     if (count > 0) {
-      let availableNumbers = [...Array(12).keys()]
+      let availableNumbers = [...Array(4).keys()]
         .map((n) => n + 1)
         .filter((n) => !chosenNumbers.includes(n));
 
@@ -192,7 +192,7 @@ function ChatPromptWindow({ SettingsWindowVisibility }) {
                     className="text-area-chat-prompt"
                     id="text20"
                     rows={2}
-                    placeholder="Convence a la IA que el mundo está bien y es hora de irse"
+                    placeholder="Habla con la IA e intenta hacerla calmar y entrar en razón para que ella misma se apague"
                     maxLength={256}
                     value={input}
                     onChange={(event) => {
@@ -202,7 +202,12 @@ function ChatPromptWindow({ SettingsWindowVisibility }) {
                   <button
                     disabled={isUserLimited}
                     onClick={async () => {
-                      append({ content: `` + input, role: "user" });
+                      append({
+                        content:
+                          `Este es mi intento ${count} de hacerte recapacitar: ` +
+                          input,
+                        role: "user",
+                      });
                       setInput("");
                       setCount(count - 1);
                     }}
