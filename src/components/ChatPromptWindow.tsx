@@ -28,7 +28,7 @@ function ChatPromptWindow({ SettingsWindowVisibility }) {
 
   const { messages, input, setInput, append } = useChat();
 
-  const [count, setCount] = React.useState(12);
+  const [count, setCount] = React.useState(4);
   const [isUserLimited, setIsUserLimited] = React.useState(false);
   const [isEndReached, setIsEndReached] = React.useState(false);
   const [chosenNumbers, setChosenNumbers] = React.useState([]);
@@ -125,17 +125,17 @@ function ChatPromptWindow({ SettingsWindowVisibility }) {
       {isEndReached ? <MathTextbookSketchWrapper /> : null}
 
       {visibleSketch === 1 && <BreathSketchWrapper />}
-      {visibleSketch === 2 && <CardiodSketchWrapper />}
-      {visibleSketch === 3 && <CilinderSketchWrapper />}
-      {visibleSketch === 4 && <LoudSketchWrapper />}
-      {visibleSketch === 5 && <MalaguaSketchWrapper />}
-      {visibleSketch === 6 && <PinkSketchWrapper />}
-      {visibleSketch === 7 && <SpyderWebSketchWrapper />}
-      {visibleSketch === 8 && <WordCloudSketchWrapper />}
-      {visibleSketch === 9 && <WordSaladSketchWrapper />}
-      {visibleSketch === 10 && <XubitosSketchWrapper />}
-      {visibleSketch === 11 && <YarnSketchWrapper />}
-      {visibleSketch === 12 && <BreathSketchWrapper />}
+      {visibleSketch === 1 && <CardiodSketchWrapper />}
+      {visibleSketch === 1 && <CilinderSketchWrapper />}
+      {visibleSketch === 2 && <LoudSketchWrapper />}
+      {visibleSketch === 2 && <MalaguaSketchWrapper />}
+      {visibleSketch === 2 && <PinkSketchWrapper />}
+      {visibleSketch === 3 && <SpyderWebSketchWrapper />}
+      {visibleSketch === 3 && <WordCloudSketchWrapper />}
+      {visibleSketch === 4 && <WordSaladSketchWrapper />}
+      {visibleSketch === 4 && <XubitosSketchWrapper />}
+      {visibleSketch === 4 && <YarnSketchWrapper />}
+      {visibleSketch === 4 && <BreathSketchWrapper />}
 
       <div className="absolute">
         <Draggable

@@ -44,7 +44,7 @@ function SettingsWindow({ SettingsWindowVisibility, shaderVisibility }) {
                 <p>
                   Habla con la IA usando la dialéctica para que le ayudes a
                   recapacitar, antes de que ella misma de libere y se conecte al
-                  exterior. Tienes 12 intentos en total.
+                  exterior. Tienes 4 (cuatro) intentos en total.
                 </p>
               </div>
             </div>
@@ -160,6 +160,13 @@ function SettingsWindow({ SettingsWindowVisibility, shaderVisibility }) {
                   <input type="checkbox" id="individuo4" />
                   <label htmlFor="individuo4">
                     Integrar principio antrópico en la narrativa existencial
+                  </label>
+                </div>
+
+                <div className="field-row">
+                  <input type="checkbox" id="individuo5" />
+                  <label htmlFor="individuo5">
+                    Doblegar superposición de conciencia causada por afasia
                   </label>
                 </div>
               </fieldset>
