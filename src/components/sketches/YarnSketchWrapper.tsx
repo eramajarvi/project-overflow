@@ -16,9 +16,9 @@ function YarnSketchWrapper() {
       <Draggable
         handle="#yarn-window-title-bar"
         nodeRef={YarnNodeRef}
-        positionOffset={{ x: "800px", y: "-350px" }}
+        positionOffset={{ x: "800px", y: "-400px" }}
       >
-        <div ref={YarnNodeRef} className="window" style={{ width: "600px" }}>
+        <div ref={YarnNodeRef} className="window" style={{ width: "400px" }}>
           <div className="title-bar full-title-bar" id="yarn-window-title-bar">
             <div className="title-bar-text">x^2 + y^2 + z^2 = 1</div>
           </div>

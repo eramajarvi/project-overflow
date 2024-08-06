@@ -16,7 +16,7 @@ function SpyderWebSketchWrapper() {
       <Draggable
         handle="#spyder-web-window-title-bar"
         nodeRef={nodeRef}
-        positionOffset={{ x: "500px", y: "-250px" }}
+        positionOffset={{ x: "600px", y: "-350px" }}
       >
         <div ref={nodeRef} className="window" style={{ width: "550px" }}>
           <div

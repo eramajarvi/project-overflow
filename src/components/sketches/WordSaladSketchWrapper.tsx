@@ -16,7 +16,7 @@ function WordSaladSketchWrapper() {
       <Draggable
         handle="#word-salad-window-title-bar"
         nodeRef={WordSaladNodeRef}
-        positionOffset={{ x: "600px", y: "-250px" }}
+        positionOffset={{ x: "570px", y: "-150px" }}
       >
         <div
           ref={WordSaladNodeRef}

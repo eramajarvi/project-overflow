@@ -16,7 +16,7 @@ function XubitosSketchWrapper() {
       <Draggable
         handle="#xubitos-window-title-bar"
         nodeRef={XubitosNodeRef}
-        positionOffset={{ x: "700px", y: "-250px" }}
+        positionOffset={{ x: "100px", y: "-350px" }}
       >
         <div ref={XubitosNodeRef} className="window" style={{ width: "450px" }}>
           <div

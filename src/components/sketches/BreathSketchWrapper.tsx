@@ -16,7 +16,7 @@ function BreathSketchWrapper() {
       <Draggable
         handle="#breath-window-title-bar"
         nodeRef={BreathNodeRef}
-        positionOffset={{ x: "600px", y: "-250px" }}
+        positionOffset={{ x: "1000px", y: "-75px" }}
       >
         <div ref={BreathNodeRef} className="window" style={{ width: "450px" }}>
           <div

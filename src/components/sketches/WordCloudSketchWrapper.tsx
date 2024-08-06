@@ -16,7 +16,7 @@ function WordCloudSketchWrapper() {
       <Draggable
         handle="#word-cloud-window-title-bar"
         nodeRef={WordCloudNodeRef}
-        positionOffset={{ x: "100px", y: "-250px" }}
+        positionOffset={{ x: "0px", y: "0px" }}
       >
         <div
           ref={WordCloudNodeRef}

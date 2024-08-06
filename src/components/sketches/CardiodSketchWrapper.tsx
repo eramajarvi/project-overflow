@@ -16,7 +16,7 @@ function CardiodSketchWrapper() {
       <Draggable
         handle="#cardiod-window-title-bar"
         nodeRef={CardiodNodeRef}
-        positionOffset={{ x: "850px", y: "-350px" }}
+        positionOffset={{ x: "1050px", y: "-450px" }}
       >
         <div ref={CardiodNodeRef} className="window" style={{ width: "600px" }}>
           <div
