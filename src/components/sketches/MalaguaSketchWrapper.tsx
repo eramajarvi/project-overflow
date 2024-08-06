@@ -16,7 +16,7 @@ function MalaguaSketchWrapper() {
       <Draggable
         handle="#malagua-window-title-bar"
         nodeRef={MalaguaNodeRef}
-        positionOffset={{ x: "400px", y: "-150px" }}
+        positionOffset={{ x: "100px", y: "-450px" }}
       >
         <div ref={MalaguaNodeRef} className="window" style={{ width: "400px" }}>
           <div

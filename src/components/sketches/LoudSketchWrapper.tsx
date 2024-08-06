@@ -16,7 +16,7 @@ function LoudSketchWrapper() {
       <Draggable
         handle="#loud-window-title-bar"
         nodeRef={LoudNodeRef}
-        positionOffset={{ x: "600px", y: "-250px" }}
+        positionOffset={{ x: "600px", y: "-200px" }}
       >
         <div ref={LoudNodeRef} className="window" style={{ width: "500px" }}>
           <div className="title-bar full-title-bar" id="loud-window-title-bar">

@@ -16,7 +16,7 @@ function PinkSketchWrapper() {
       <Draggable
         handle="#pink-window-title-bar"
         nodeRef={PinkNodeRef}
-        positionOffset={{ x: "500px", y: "-100px" }}
+        positionOffset={{ x: "1200px", y: "-50px" }}
       >
         <div ref={PinkNodeRef} className="window" style={{ width: "400px" }}>
           <div className="title-bar full-title-bar" id="pink-window-title-bar">
